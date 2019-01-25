@@ -55,4 +55,9 @@ class Dimens {
     fontFamily: 'Impact',    
     fontSize: 23.0
    );
+    static const TextStyle timerfont = const TextStyle(
+  color: Color(0xFFffffff),
+    fontFamily: 'PhosphateInline',    
+    fontSize: 40.0
+   );
 }

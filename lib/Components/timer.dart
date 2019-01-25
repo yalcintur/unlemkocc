@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-//import 'package:random_color/random_color.dart';
+import 'package:random_color/random_color.dart';
+import '../Theme.dart' as Theme;
 
 
 
@@ -14,11 +15,13 @@ class _TimerState extends State<Timerr> {
 
 
 
-//   RandomColor _randomColor = RandomColor();
+ static RandomColor _randomColor = RandomColor();
 
-// Color _color = _randomColor.randomColor(
-//   colorBrightness: ColorBrightness.light
-// );
+ Color _color = _randomColor.randomColor(
+   colorBrightness: ColorBrightness.light,
+  colorHue: ColorHue.red
+
+ );
 
   var expired;
    String end,tit,exptit;
@@ -36,13 +39,16 @@ class _TimerState extends State<Timerr> {
     return Container(
       width: 375.0,
       height: 128.0,
-      //color: _color,
+      color: _color,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          new Text("$tit"),
-          new Text( "$remday : $remhour : $remmin : $remsec"),
+          new FittedBox(
+
+          child: new Text("$tit",style: Theme.TextStyles.timerfont,),),
+          new Container(height: 8.0,),
+          new Text( "$remday : $remhour : $remmin : $remsec",style: Theme.TextStyles.kosebas),
           
         ],
       ),
@@ -98,7 +104,7 @@ class _TimerState extends State<Timerr> {
            expired = true;
           });
     
-        debugPrint("expired");
+    //    debugPrint("expired");
 
 
         //  bilge.updateexpired(false);

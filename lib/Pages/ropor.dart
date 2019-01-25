@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../Theme.dart' as Theme;
 import '../Components/ropSayac.dart';
 import '../Components/Stackvideostile.dart';
+import '../Model/videos.dart';
 
 class Ropo extends StatefulWidget {
   final RopoState state = new RopoState();
@@ -9,7 +10,7 @@ class Ropo extends StatefulWidget {
     state.change(exp);
   }
 
-  RopoState createState() =>  new RopoState();
+  RopoState createState() => new RopoState();
 }
 
 class RopoState extends State<Ropo> {
@@ -117,7 +118,7 @@ class RopoState extends State<Ropo> {
     );
   }
 
-  void initState() { 
+  void initState() {
     super.initState();
   }
 
@@ -195,13 +196,23 @@ class RopoState extends State<Ropo> {
               ),
             ),
           ), //üstteki bar bitti
-          
+          videoList(),
         ],
       ),
     );
   }
 
- 
+  Widget videoList() {
+    return new Container(
+      margin: EdgeInsets.only(top: 8.0,left: 4.0,right: 4.0),
+      height: 285,
+      child: new ListView.builder(
+          itemCount: VideoDao.videos.length,
+          itemBuilder: (BuildContext ctxt, int index) {
+            return VideoTile(index);
+          }),
+    );
+  }
 
   List<String> lists = ["asdas", "adadsa"];
 
@@ -209,41 +220,42 @@ class RopoState extends State<Ropo> {
   Widget build(BuildContext context) {
     return Container(
       color: Theme.Colors.pagebackground,
-      
-       child: new Stack(
-         children: <Widget>[
-           new Container(
-             margin: EdgeInsets.only(left: 0.0, top: 37.0),
-             child: Image.asset(
-               "assets/k@3x.png",
+      child: new Stack(
+        children: <Widget>[
+          new Container(
+            margin: EdgeInsets.only(left: 0.0, top: 37.0),
+            child: Image.asset(
+              "assets/k@3x.png",
               // fit: BoxFit.fill,
-             ),
-           ),
-           new Container(
-             child: new Column(
-               children: <Widget>[
-                 RopSayac(this),          
-                 new Expanded(
-                    child: CustomScrollView(
-                      slivers: <Widget>[
-                        SliverToBoxAdapter(
-                          child: new Column(
-                            children: <Widget>[
-                              rendervideoorui(),
-                              new Container(height: 40.0,),
-                              stackvideos(),         
-                            ],
-                          ),
+            ),
+          ),
+          new Container(
+            child: new Column(
+              children: <Widget>[
+                RopSayac(this),
+                new Expanded(
+                  child: CustomScrollView(
+                    slivers: <Widget>[
+                      SliverToBoxAdapter(
+                        child: new Column(
+                          children: <Widget>[
+                            rendervideoorui(),
+                            new Container(
+                              height: 40.0,
+                            ),
+                            stackvideos(),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-               ],
-             ),
+                ),
+              ],
+            ),
           ),
 
-           //new Image.asset("name"),
-         ],
+          //new Image.asset("name"),
+        ],
       ),
     );
   }

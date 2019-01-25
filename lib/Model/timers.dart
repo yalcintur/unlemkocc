@@ -16,22 +16,22 @@ class Timers{
   static final List<Timer> timers = [
     const Timer(
       enddate: "2019-01-24 11:23:30",
-      title: "Annen",
+      title: "ANNEN",
       expiredtext: "helal",
     ),
     const Timer(
       enddate: "2019-02-14 10:10:30",
-      title: "Neden",
+      title: "NEDEN",
       expiredtext: "helal",
     ),
     const Timer(
       enddate: "2019-04-24 11:23:30",
-      title: "Kim",
+      title: "MOLOTOFUMU KIM IÇTI",
       expiredtext: "helal",
     ),
     const Timer(
       enddate: "2019-02-01 11:23:30",
-      title: "Çocuk Adam ?",
+      title: "COCUK ADAM?",
       expiredtext: "helal",
     ),
 
