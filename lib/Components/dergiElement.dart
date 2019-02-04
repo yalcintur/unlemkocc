@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../Theme.dart' as Theme;
 import '../Model/dergi.dart';
+import '../Pages/dergidetailPage.dart';
 
 import 'package:auto_size_text/auto_size_text.dart';
 
@@ -17,37 +18,47 @@ class Dergielemet extends StatelessWidget {
       child: new Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          new Container(
-            width: 163.0,
-            height: 222.0,
-            child: new Stack(
-              children: <Widget>[
-                new Container(
-                  color: Theme.Colors.dergigray,
-                  width: 163.0,
-                  height: 222.0,
-                ),
-                new Container(
-                  margin: new EdgeInsets.all(6.0),
-                  width: 151.0,
-                  height: 210.1,
+          new GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (_) {
+                return DergiDetail(dergi.image,indexed);
+              }));
+            },
+            child: new Container(
+              width: 163.0,
+              height: 222.0,
+              child: new Stack(
+                children: <Widget>[
+                  new Container(
+                    color: Theme.Colors.dergigray,
+                    width: 163.0,
+                    height: 222.0,
+                  ),
+                  new Hero(
+                    tag: indexed,
+                    child: new Container(
+                      margin: new EdgeInsets.all(6.0),
+                      width: 151.0,
+                      height: 210.1,
 
-                  decoration: new BoxDecoration(
-                      image: new DecorationImage(
-                          image: new AssetImage(dergi.image),
-                          fit: BoxFit.cover)),
+                      decoration: new BoxDecoration(
+                          image: new DecorationImage(
+                              image: new AssetImage(dergi.image),
+                              fit: BoxFit.cover)),
 
-                  // new Container(
-                  //   margin: new EdgeInsets.all(6.0),
-                  //   child: new Image.asset(
-                  //     dergi.image,
-                  //      width: 151.0,
-                  //     height: 210.1,
-                  //   ) ,
+                      // new Container(
+                      //   margin: new EdgeInsets.all(6.0),
+                      //   child: new Image.asset(
+                      //     dergi.image,
+                      //      width: 151.0,
+                      //     height: 210.1,
+                      //   ) ,
 
-                  //Image.asset("assets/lake.jpg",width: 151.0,height: 210.1,),
-                ),
-              ],
+                      //Image.asset("assets/lake.jpg",width: 151.0,height: 210.1,),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           new Stack(

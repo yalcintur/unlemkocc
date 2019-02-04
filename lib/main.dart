@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './Pages/loginPage.dart';
 import './Components/bottomtab.dart';
+import './Pages/dergidetailPage.dart';
 
 
 void main() => runApp(App());
@@ -10,6 +11,7 @@ void main() => runApp(App());
   final routes = <String, WidgetBuilder>{
     LoginPage.tag: (context) => LoginPage(),
     Bottomtab.tag: (context) => Bottomtab(),
+    //DergiDetail.tag: (context) => DergiDetail(),
   };
 
 

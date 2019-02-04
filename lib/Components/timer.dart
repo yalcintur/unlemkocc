@@ -33,10 +33,10 @@ class _TimerState extends State<Timerr> {
   Timer _everySecond;
   var endpointparsed;
 
-
+  
   Widget timerbox(){
 
-    return Container(
+    return Container( 
       width: 375.0,
       height: 128.0,
       color: _color,
@@ -45,8 +45,8 @@ class _TimerState extends State<Timerr> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           new FittedBox(
-
-          child: new Text("$tit",style: Theme.TextStyles.timerfont,),),
+          
+          child: new Text("${tit.toUpperCase()}",style: Theme.TextStyles.timerfont,),),
           new Container(height: 8.0,),
           new Text( "$remday : $remhour : $remmin : $remsec",style: Theme.TextStyles.kosebas),
           
