@@ -70,6 +70,9 @@ flutter:
     - family: PhosphateInline
       fonts:
         - asset: fonts/PhosphateInline.ttf
+    - family: DINCondensedBold
+      fonts:
+        - asset: fonts/DINCondensedBold.otf
 
   # To add assets to your application, add an assets section, like this:
   # assets:
