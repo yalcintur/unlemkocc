@@ -8,6 +8,7 @@ class Webview extends StatelessWidget {
   Webview(this.url);
   @override
   Widget build(BuildContext context) {
+
     return WebviewScaffold(
       url: url,
       appBar: Bottomtab.AppBarr(),
