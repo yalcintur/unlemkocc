@@ -10,17 +10,17 @@ class DetailBars {
     const Detail(
       id: "2",
       title: "EKİM 25 SAYISI",
-      link: "https://www.brookfield.hants.sch.uk/subpage-content/content-pdfs/exams11/English/Modern%20Text/An%20Inspector%20Calls_text.pdf",
+      link: "https://drive.google.com/uc?export=download&id=1n7DOSPHJudPkIjkvJtNctfe-BfRMEmKf",
     ),
     const Detail(
       id: "3",
       title: "Boyut 48 ekim ",
-      link: "assets/tawa@3x.png",
+      link: "https://drive.google.com/uc?export=download&id=1Ca5jFeruoVzb6E2xgwYbNqSA6PvBi0wW",
     ),
     const Detail(
       id: "4",
       title: "annen",
-      link: "assets/tawa@3x.png",
+      link: "https://drive.google.com/uc?export=download&id=1wBwgSv6S5LgrR_693DfwJXuN6ii4p4UW",
     ),
   ];
 

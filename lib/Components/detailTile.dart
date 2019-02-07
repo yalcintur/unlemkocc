@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Theme.dart' as Theme;
+import './WebView.dart';
 
 class DetailTile extends StatelessWidget {
   String url, title;
@@ -9,8 +10,13 @@ class DetailTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.all(5.0),
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (_) {
+            return Webview(url);
+          }));
+        },
         child: Container(
           decoration: new BoxDecoration(
             color: Colors.black,

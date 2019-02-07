@@ -9,21 +9,26 @@ import '../Components/ropSayac.dart';
 class Bottomtab extends StatelessWidget {
     static String tag = 'home-page';
 
+   static Widget AppBarr(){
+      return new AppBar(
+        title: Center(
+
+          child: Image.asset(
+            "assets/auora@2x.png",
+            width: 144.0,
+            height: 54.0,
+          ),
+        ),
+        backgroundColor: Theme.Colors.tabbarbackground,
+      );
+    }
+
   @override
   Widget build(BuildContext context) {
     return new DefaultTabController(
       length: 5,
       child: new Scaffold(
-        appBar: new AppBar(
-          title: Center(
-            child: Image.asset(
-              "assets/auora@2x.png",
-              width: 144.0,
-              height: 54.0,
-            ),
-          ),
-          backgroundColor: Theme.Colors.tabbarbackground,
-        ),
+        appBar: AppBarr(),
         body: TabBarView(
           children: [
             new DergiPage(),
