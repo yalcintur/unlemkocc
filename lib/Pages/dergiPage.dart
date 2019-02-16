@@ -1,4 +1,5 @@
 import '../Model/dergis.dart';
+import '../Model/dergi.dart';
 import 'package:flutter/material.dart';
 import '../Components/dergiElement.dart';
 import '../Model/dergis.dart';
@@ -10,26 +11,36 @@ class DergiPage extends StatefulWidget {
 }
 
 class _DergiPageState extends State<DergiPage> {
-  
+  List<Dergi> dergiler;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    setState(() {
+      dergiler =  DergiDao.dergicallback();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Container(
       color: Theme.Colors.pagebackground,
 
-      child: OrientationBuilder(
-        builder: (context, orientation) {
-          return new GridView.builder(
-                      itemCount: DergiDao.dergis.length,
-
-      gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:2,mainAxisSpacing: 1.0,crossAxisSpacing: 1.0,childAspectRatio: 0.75),
-      itemBuilder: (BuildContext context, int index) {
-        return Container(
-                 alignment: Alignment.center,
-                 child: Dergielemet(DergiDao.dergis[index],index),
-              );
-      },
-  );
-            }),
+//      child: OrientationBuilder(
+//        builder: (context, orientation) {
+//          return new GridView.builder(
+//                      itemCount: dergiler.length,
+//
+//      gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:2,mainAxisSpacing: 1.0,crossAxisSpacing: 1.0,childAspectRatio: 0.75),
+//      itemBuilder: (BuildContext context, int index) {
+//        return Container(
+//                 alignment: Alignment.center,
+//                 child: Dergielemet(dergiler[index],index),
+//              );
+//      },
+//  );
+//            }),
 
 
       // child: new CustomScrollView(

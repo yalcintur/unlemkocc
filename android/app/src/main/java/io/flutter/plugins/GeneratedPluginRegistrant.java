@@ -1,7 +1,8 @@
 package io.flutter.plugins;
 
 import io.flutter.plugin.common.PluginRegistry;
-import com.flutter_webview_plugin.FlutterWebviewPlugin;
+import io.flutter.plugins.pathprovider.PathProviderPlugin;
+import com.example.pdfviewerplugin.PdfViewerPlugin;
 
 /**
  * Generated file. Do not edit.
@@ -11,7 +12,8 @@ public final class GeneratedPluginRegistrant {
     if (alreadyRegisteredWith(registry)) {
       return;
     }
-    FlutterWebviewPlugin.registerWith(registry.registrarFor("com.flutter_webview_plugin.FlutterWebviewPlugin"));
+    PathProviderPlugin.registerWith(registry.registrarFor("io.flutter.plugins.pathprovider.PathProviderPlugin"));
+    PdfViewerPlugin.registerWith(registry.registrarFor("com.example.pdfviewerplugin.PdfViewerPlugin"));
   }
 
   private static boolean alreadyRegisteredWith(PluginRegistry registry) {

@@ -93,7 +93,7 @@ class Dergielemet extends StatelessWidget {
                         width: 4.0,
                       ),
                       new AutoSizeText(
-                        dergi.seen,
+                        "20",
                         style: TextStyle(fontSize: 10.0),
                         minFontSize: 3.0,
                         maxLines: 1,
@@ -108,7 +108,7 @@ class Dergielemet extends StatelessWidget {
                         height: 25.0,
                       ),
                       new AutoSizeText(
-                        dergi.like,
+                        "30",
                         style: TextStyle(fontSize: 10.0),
                         minFontSize: 3.0,
                         maxLines: 1,
