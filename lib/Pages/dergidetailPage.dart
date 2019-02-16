@@ -70,7 +70,7 @@ class _DergiDetailState extends State<DergiDetail> {
                       height: 278.0,
                       decoration: new BoxDecoration(
                           image: new DecorationImage(
-                              image: new AssetImage(dergiimage),
+                              image: new NetworkImage(dergiimage),
                               fit: BoxFit.cover)),
                     ),
                   ),

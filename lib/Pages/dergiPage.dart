@@ -11,22 +11,67 @@ class DergiPage extends StatefulWidget {
 }
 
 class _DergiPageState extends State<DergiPage> {
-  List<Dergi> dergiler;
+  var dergiler;
+  bool loaded = false;
+
+
+  Future getlist() async {
+    var val = await DergiDao.dergicallback();
+    setState(() {
+      loaded = true;
+      dergiler = val;
+    });
+  }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    setState(() {
-      dergiler =  DergiDao.dergicallback();
-    });
+    getlist();
+
+//    setState(() {
+//      dergiler = DergiDao.dergicallback();
+//    });
+
   }
+
+
+  Widget checkload(){
+
+    if(loaded == true){
+      return GridLister();
+    }else{
+      return new Text("loading");
+    }
+
+  }
+
+  Widget GridLister(){
+
+
+    return  OrientationBuilder(
+        builder: (context, orientation) {
+          return new GridView.builder(
+                      itemCount: dergiler.length,
+
+      gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:2,mainAxisSpacing: 1.0,crossAxisSpacing: 1.0,childAspectRatio: 0.75),
+      itemBuilder: (BuildContext context, int index) {
+        return Container(
+                 alignment: Alignment.center,
+                 child: Dergielemet(dergiler[index],index),
+              );
+      },
+  );
+            });
+
+  }
+
 
   @override
   Widget build(BuildContext context) {
     return new Container(
       color: Theme.Colors.pagebackground,
-
+      child: checkload(),
 //      child: OrientationBuilder(
 //        builder: (context, orientation) {
 //          return new GridView.builder(

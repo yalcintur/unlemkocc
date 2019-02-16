@@ -5,7 +5,7 @@ import './WebView.dart';
 class DetailTile extends StatelessWidget {
   String url, title;
 
-  DetailTile(this.title, this.url);
+  DetailTile(this.title, this.url,);
 
   @override
   Widget build(BuildContext context) {

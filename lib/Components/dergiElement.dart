@@ -43,8 +43,14 @@ class Dergielemet extends StatelessWidget {
 
                       decoration: new BoxDecoration(
                           image: new DecorationImage(
-                              image: new AssetImage(dergi.image),
-                              fit: BoxFit.cover)),
+                            image: NetworkImage(dergi.image),
+                            fit: BoxFit.cover,
+
+
+
+                          ),
+//                              new AssetImage(dergi.image),
+//                              fit: BoxFit.cover)),
 
                       // new Container(
                       //   margin: new EdgeInsets.all(6.0),
@@ -55,6 +61,7 @@ class Dergielemet extends StatelessWidget {
                       //   ) ,
 
                       //Image.asset("assets/lake.jpg",width: 151.0,height: 210.1,),
+                      ),
                     ),
                   ),
                 ],
