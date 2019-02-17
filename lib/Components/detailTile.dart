@@ -14,7 +14,7 @@ class DetailTile extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           Navigator.push(context, MaterialPageRoute(builder: (_) {
-            return Webview();
+            return Webview(url);
           }));
         },
         child: Container(

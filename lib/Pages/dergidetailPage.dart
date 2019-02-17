@@ -17,6 +17,7 @@ class _DergiDetailState extends State<DergiDetail> {
   var dergiimage;
   int indexed;
   List<Detail> details;
+  bool loaded = false;
   _DergiDetailState(this.dergiimage, this.indexed);
 
   @override
@@ -25,18 +26,28 @@ class _DergiDetailState extends State<DergiDetail> {
     super.dispose();
   }
 
+  Future getlist() async {
+    var val = await DetailBars.callback(indexed);
+    setState(() {
+      details = val;
+      loaded = true;
+    });
+  }
+
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    this.details = DetailBars.callback();
+
+    getlist();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Theme.Colors.pagebackground,
-      child: new Stack(children: <Widget>[
+
+
+  Widget _isloaded(){
+    if(loaded == true){
+      return new Stack(children: <Widget>[
         new Container(
           child: new GestureDetector(
               onTap: () {
@@ -57,24 +68,24 @@ class _DergiDetailState extends State<DergiDetail> {
 //              color: Colors.black,
 //              width: 211,
 //              height: 291,
-             new Container(
-               decoration: BoxDecoration(
-                 border: new Border.all(color: Colors.black,width: 6.0)
+            new Container(
+              decoration: BoxDecoration(
+                  border: new Border.all(color: Colors.black,width: 6.0)
 
-               ),
-                  margin: EdgeInsets.all(6.0),
-                  child: Hero(
-                    tag: indexed,
-                    child: new Container(
-                      width: 199.0,
-                      height: 278.0,
-                      decoration: new BoxDecoration(
-                          image: new DecorationImage(
-                              image: new NetworkImage(dergiimage),
-                              fit: BoxFit.cover)),
-                    ),
-                  ),
-             ),
+              ),
+              margin: EdgeInsets.all(6.0),
+              child: Hero(
+                tag: indexed,
+                child: new Container(
+                  width: 199.0,
+                  height: 278.0,
+                  decoration: new BoxDecoration(
+                      image: new DecorationImage(
+                          image: new NetworkImage(dergiimage),
+                          fit: BoxFit.cover)),
+                ),
+              ),
+            ),
 
             new Container(height: 29.0),
             // İmage is over
@@ -93,7 +104,20 @@ class _DergiDetailState extends State<DergiDetail> {
                     }))
           ],
         ),
-      ]),
+      ]);
+
+
+    }else{
+
+      return Container();
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Theme.Colors.pagebackground,
+      child: _isloaded(),
     );
   }
 }

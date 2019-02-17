@@ -12,11 +12,18 @@ import './bottomtab.dart';
 import '../Theme.dart' as Theme;
 
 class Webview extends StatefulWidget {
+  String url;
+
+  Webview(this.url);
+
   @override
-  WebViewState createState() => new WebViewState();
+  WebViewState createState() => new WebViewState(url);
+
 }
 
 class WebViewState extends State<Webview> {
+  String url;
+  WebViewState(this.url);
   double pdfwidth,pdfheight;
   String _platformVersion = 'Unknown';
 
@@ -30,6 +37,8 @@ class WebViewState extends State<Webview> {
   initState() {
     super.initState();
     initPlatformState();
+    print(url);
+
   }
 
   Future<String> get _localPath async {
@@ -56,7 +65,7 @@ class WebViewState extends State<Webview> {
   }
   Future<Uint8List> fetchPost() async {
     final response =
-    await http.get('https://www.brookfield.hants.sch.uk/subpage-content/content-pdfs/exams11/English/Modern%20Text/An%20Inspector%20Calls_text.pdf');
+    await http.get(url);
     final responseJson = response.bodyBytes;
 
     return responseJson;

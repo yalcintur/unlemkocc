@@ -1,7 +1,10 @@
 import './detailBar.dart';
+import './dergis.dart';
+import 'dart:async';
+import 'dart:convert';
 
 class DetailBars {
-  static final List<Detail> dergis = [
+  static final List<Detail> details = [
     const Detail(
       id: "1",
       title: "Boyut",
@@ -24,10 +27,22 @@ class DetailBars {
     ),
   ];
 
+  static List<Detail> parsePhotos(String responseBody) {
+    final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
 
-  static List<Detail> callback(){
+    return parsed.map<Detail>((json) => Detail.fromJson(json)).toList();
+  }
 
-    return dergis;
+  static Future<List<Detail>> callback(int index) async{
+    var detailsraw =  await DergiDao.dergicallback();
+    //print(detailsraw.toString());
+    var dertailinstep = detailsraw[index].linkler;
+
+  //print(dertailinstep[0].title);
+   // var parsedlist = parsePhotos(dertailinstep.toString());
+
+
+    return dertailinstep;
 
   }
 
