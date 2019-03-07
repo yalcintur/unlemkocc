@@ -1,4 +1,4 @@
-#Sun Feb 17 18:12:29 EET 2019
-base.0=D\:\\Desktop\\WorkZone\\FlutterWorkplace\\unlemkocc\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
+#Thu Mar 07 17:08:19 EET 2019
+base.0=D\:\\Desktop\\WorkZone\\FlutterWorkplace\\playertry\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

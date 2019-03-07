@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/unlemkocc.iml" filepath="$PROJECT_DIR$/.idea/unlemkocc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/playertry.iml" filepath="$PROJECT_DIR$/playertry.iml" />
     </modules>
   </component>
 </project>

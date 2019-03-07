@@ -1,4 +1,4 @@
-package com.example.aurorav10;
+package com.example.playertry;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
