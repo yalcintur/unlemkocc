@@ -4,6 +4,7 @@ import '../Pages/dergiPage.dart';
 import '../Pages/koseler.dart';
 import '../Pages/ropor.dart';
 import '../Pages/timing.dart';
+import '../Pages/home.dart';
 import '../Components/ropSayac.dart';
 
 class Bottomtab extends StatelessWidget {
@@ -14,7 +15,7 @@ class Bottomtab extends StatelessWidget {
         title: Center(
 
           child: Image.asset(
-            "assets/auora@2x.png",
+            "assets/unlem@3x.png",
             width: 144.0,
             height: 54.0,
           ),
@@ -33,9 +34,7 @@ class Bottomtab extends StatelessWidget {
           children: [
             new DergiPage(),
             new Ropo(),
-            new Container(
-              color: Colors.lightGreen,
-            ),
+            new Home(),
             new Koseler(),
             new Timing(),
           ],
@@ -99,7 +98,7 @@ class Bottomtab extends StatelessWidget {
                   decoration: new BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage(
-                          "assets/a.png",
+                          "assets/koSEyaz@3x.png",
                         ),
                         fit: BoxFit.fill),
                   ),

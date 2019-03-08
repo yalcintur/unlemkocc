@@ -7,18 +7,18 @@ import '../Model/detailBar.dart';
 class DergiDetail extends StatefulWidget {
   static String tag = 'dergi-detail';
   int indexed;
-  var dergiimage;
-  DergiDetail(this.dergiimage, this.indexed);
+  var dergiimage,baslik;
+  DergiDetail(this.dergiimage, this.baslik,this.indexed);
   @override
-  _DergiDetailState createState() => _DergiDetailState(dergiimage, indexed);
+  _DergiDetailState createState() => _DergiDetailState(dergiimage,baslik, indexed);
 }
 
 class _DergiDetailState extends State<DergiDetail> {
-  var dergiimage;
+  var dergiimage,baslik;
   int indexed;
   List<Detail> details;
   bool loaded = false;
-  _DergiDetailState(this.dergiimage, this.indexed);
+  _DergiDetailState(this.dergiimage,this.baslik, this.indexed);
 
   @override
   void dispose() {
@@ -89,10 +89,12 @@ class _DergiDetailState extends State<DergiDetail> {
 
             new Container(height: 29.0),
             // İmage is over
-            new Text(
-              "Yeni Sayı Yayında",
+            new Material(
+            type: MaterialType.transparency,
+            child: new Text(
+              baslik,
               style: Theme.TextStyles.detailpagetitle,
-            ),
+            )),
             // Text is over
             new Expanded(
                 flex: 1,

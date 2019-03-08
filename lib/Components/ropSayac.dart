@@ -22,7 +22,7 @@ class _RopSayacState extends State<RopSayac> {
   int remday = 0, remhour = 0, remmin = 0, remsec = 0;
   bool expired = false;
   var _now = DateTime.now();
-  var endpoint = DateTime.parse("2019-01-24 11:23:30");
+  var endpoint = DateTime.parse("2019-05-19 11:23:30");
 
   Timer _everySecond;
   final Ropo ropo = new Ropo();

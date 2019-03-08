@@ -20,16 +20,31 @@ class DetailTile extends StatelessWidget {
         child: Container(
           decoration: new BoxDecoration(
             color: Colors.black,
-            borderRadius: BorderRadius.circular(15.0),
+            borderRadius: BorderRadius.circular(25.0),
           ),
           width: 100.0,
           height: 41.0,
           child: new Row(
             children: <Widget>[
-              new Text(
+              new Container(
+                margin: EdgeInsets.only(left: 4.0,right: 16.0),
+                height:34,
+                width: 34,
+                child: new Center(
+
+                  child: new Material(type: MaterialType.transparency, child:new Text("B",style: Theme.TextStyles.detailpagetilecapital,)),
+                ),
+                decoration: new BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+              ),
+              new Material(
+                  type: MaterialType.transparency,
+                  child: Text(
                 "$title",
                 style: Theme.TextStyles.detailpagetiletitle,
-              ),
+              )),
             ],
           ),
         ),

@@ -39,4 +39,6 @@ class TextStyles {
       color: Color(0xFFffffff), fontFamily: 'DINCondensedBold', fontSize: 41.0);
   static const TextStyle detailpagetiletitle= const TextStyle(
       color: Color(0xFFffffff), fontFamily: 'DINCondensedBold', fontSize: 30.0);
+  static const TextStyle detailpagetilecapital= const TextStyle(
+      color: Color(0xFF000000), fontFamily: 'DINCondensedBold', fontSize: 30.0);
 }

@@ -22,8 +22,6 @@ class _DergiPageState extends State<DergiPage> {
     });
   }
 
-
-
   Future refreshList() async {
     var val = await DergiDao.refreshList();
     setState(() {
@@ -31,8 +29,6 @@ class _DergiPageState extends State<DergiPage> {
       dergiler = val;
     });
   }
-
-
 
   @override
   void initState() {
@@ -57,13 +53,13 @@ class _DergiPageState extends State<DergiPage> {
     return OrientationBuilder(builder: (context, orientation) {
       return RefreshIndicator(
         onRefresh: refreshList,
-        child:  new GridView.builder(
+        child: new GridView.builder(
           itemCount: dergiler.length,
           gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               mainAxisSpacing: 1.0,
               crossAxisSpacing: 1.0,
-              childAspectRatio: 0.75),
+              childAspectRatio: 0.7),
           itemBuilder: (BuildContext context, int index) {
             return Container(
               alignment: Alignment.center,
@@ -72,8 +68,6 @@ class _DergiPageState extends State<DergiPage> {
           },
         ),
       );
-
-
     });
   }
 

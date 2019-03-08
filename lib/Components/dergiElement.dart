@@ -21,7 +21,7 @@ class Dergielemet extends StatelessWidget {
           new GestureDetector(
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (_) {
-                return DergiDetail(dergi.image,indexed);
+                return DergiDetail(dergi.image,dergi.name,indexed);
               }));
             },
             child: new Container(

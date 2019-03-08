@@ -103,6 +103,7 @@ class WebViewState extends State<Webview> {
         new Container(margin: EdgeInsets.only(top: 15),child: new GestureDetector( onTap: (){
 
           Navigator.pop(context);
+          PdfViewerPlugin.close();
 
         }, child: new Icon(Icons.arrow_back_ios,size: 30.0,))),
       Center(
