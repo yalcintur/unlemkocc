@@ -3,6 +3,7 @@ import '../Theme.dart' as Theme;
 import '../Components/ropSayac.dart';
 import '../Components/Stackvideostile.dart';
 import '../Model/videos.dart';
+import '../Model/video.dart';
 
 class Ropo extends StatefulWidget {
   final RopoState state = new RopoState();
@@ -118,8 +119,31 @@ class RopoState extends State<Ropo> {
     );
   }
 
+
+  bool loaded = false;
+  List<Video> videolar,videowaiting,videorelased,videolarwaitingfinal,videolarrelasedfinal;
+
+
+  Future getlist() async {
+    var val = await VideoDao.dergicallback();
+    setState(() {
+      loaded = true;
+      videolar = val;
+    });
+    terminatesep();
+  }
+
+  Future refreshList() async {
+    var val = await VideoDao.refreshList();
+    setState(() {
+      loaded = true;
+      videolar = val;
+    });
+  }
+
   void initState() {
     super.initState();
+    getlist();
   }
 
   Widget updateexpired(bool expiredd) {
@@ -161,7 +185,44 @@ class RopoState extends State<Ropo> {
       // return video
     }
   }
+  void terminatesep(){
+    var _now = DateTime.now();
+    var endpointparsed;
 
+    for(int i = 0;i < videolar.length;i++){
+      print(videolar[i]);
+      Video vvv =videolar[i];
+      var vidi = new Video(id:vvv.id,desc:vvv.desc,link:vvv.link,bitimg:vvv.bitimg,konimg:vvv.konimg,konname:vvv.konname,expdate:vvv.expdate);
+      videowaiting.add(vidi);
+      /*
+      endpointparsed =DateTime.parse(videolar[i].expdate);
+      if(_now.isBefore(endpointparsed) == true){
+        Video asd = videolar[i];
+
+        videowaiting.add(asd);
+
+      }else{
+
+        Video asd = videolar[i];
+        videorelased.add(asd);
+      }
+
+      videowaiting.sort((a, b) => calculateremaining(a.expdate).compareTo(calculateremaining(b.expdate)));
+      print(videowaiting);
+      setState(() {
+        videolarwaitingfinal = videowaiting;
+        videolarrelasedfinal = videorelased;
+      });
+*/
+    }
+
+
+  }
+  static int calculateremaining(var endpointparsed){
+    var noww = DateTime.now();
+
+    return noww.difference(endpointparsed).inSeconds;
+  }
   Widget stackvideos() {
     return new Container(
       decoration: new BoxDecoration(
@@ -203,15 +264,20 @@ class RopoState extends State<Ropo> {
   }
 
   Widget videoList() {
-    return new Container(
-      margin: EdgeInsets.only(top: 8.0,left: 4.0,right: 4.0),
-      height: 285,
-      child: new ListView.builder(
-          itemCount: VideoDao.videos.length,
-          itemBuilder: (BuildContext ctxt, int index) {
-            return VideoTile(index);
-          }),
-    );
+    if(loaded != false){
+      return new Container(
+        margin: EdgeInsets.only(top: 8.0,left: 4.0,right: 4.0),
+        height: 285,
+        child: new ListView.builder(
+            itemCount: videolar.length,
+            itemBuilder: (BuildContext ctxt, int index) {
+              return VideoTile(index,videolar[index].title,videolar[index].link);
+            }),
+      );
+    }else{
+      return Text("loading");
+    }
+
   }
 
   List<String> lists = ["asdas", "adadsa"];

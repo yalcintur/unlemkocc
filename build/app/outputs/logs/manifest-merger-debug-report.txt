@@ -6,8 +6,10 @@ INJECTED from D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\android\app\src\mai
 INJECTED from D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\android\app\src\main\AndroidManifest.xml:1:1-39:12
 MERGED from [:pdf_viewer_plugin] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\pdf_viewer_plugin\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
 MERGED from [:path_provider] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\path_provider\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
+MERGED from [:flutter_youtube] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\flutter_youtube\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-14:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\623610ad5b7216dfd7240a99f81ab16c\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.barteksc:android-pdf-viewer:2.8.2] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\android-pdf-viewer-2.8.2.aar\8354651b70746b13341e2dcd53bf32ba\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\79e0fa3b98e65255372082882abd48e2\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.barteksc:pdfium-android:1.7.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\pdfium-android-1.7.1.aar\e93edb675c2522b8f31c1fee2fef3ffe\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:support-v4:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\1d1afc8369e61a9627cd19ea00a74515\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\b3d40add0fc9fea405397c0a10c9e458\AndroidManifest.xml:17:1-22:12
@@ -44,6 +46,8 @@ ADDED from D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\android\app\src\main\A
 		ADDED from D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\android\app\src\main\AndroidManifest.xml:8:22-64
 application
 ADDED from D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\android\app\src\main\AndroidManifest.xml:15:5-38:19
+MERGED from [:flutter_youtube] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\flutter_youtube\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-12:19
+MERGED from [:flutter_youtube] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\flutter_youtube\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-12:19
 MERGED from [com.android.support:support-v4:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\1d1afc8369e61a9627cd19ea00a74515\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-v4:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\1d1afc8369e61a9627cd19ea00a74515\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.3.1.aar\2614d7e1d6a51933d89352fd46b53bed\AndroidManifest.xml:29:5-20
@@ -92,10 +96,14 @@ MERGED from [:pdf_viewer_plugin] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\
 MERGED from [:pdf_viewer_plugin] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\pdf_viewer_plugin\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\path_provider\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\path_provider\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_youtube] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\flutter_youtube\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_youtube] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\flutter_youtube\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\623610ad5b7216dfd7240a99f81ab16c\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\623610ad5b7216dfd7240a99f81ab16c\AndroidManifest.xml:20:5-44
 MERGED from [com.github.barteksc:android-pdf-viewer:2.8.2] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\android-pdf-viewer-2.8.2.aar\8354651b70746b13341e2dcd53bf32ba\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.barteksc:android-pdf-viewer:2.8.2] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\android-pdf-viewer-2.8.2.aar\8354651b70746b13341e2dcd53bf32ba\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\79e0fa3b98e65255372082882abd48e2\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\79e0fa3b98e65255372082882abd48e2\AndroidManifest.xml:20:5-43
 MERGED from [com.github.barteksc:pdfium-android:1.7.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\pdfium-android-1.7.1.aar\e93edb675c2522b8f31c1fee2fef3ffe\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.barteksc:pdfium-android:1.7.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\pdfium-android-1.7.1.aar\e93edb675c2522b8f31c1fee2fef3ffe\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:support-v4:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\1d1afc8369e61a9627cd19ea00a74515\AndroidManifest.xml:21:5-23:54
@@ -134,6 +142,12 @@ INJECTED from D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\android\app\src\mai
 		INJECTED from D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\android\app\src\main\AndroidManifest.xml
 		ADDED from D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\android\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\android\app\src\main\AndroidManifest.xml
+activity#io.github.ponnamkarthik.flutteryoutube.PlayerActivity
+ADDED from [:flutter_youtube] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\flutter_youtube\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:8:9-11:20
+	android:configChanges
+		ADDED from [:flutter_youtube] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\flutter_youtube\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:10:13-85
+	android:name
+		ADDED from [:flutter_youtube] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\flutter_youtube\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:9:13-81
 meta-data#android.support.VERSION
 ADDED from [com.android.support:support-v4:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\1d1afc8369e61a9627cd19ea00a74515\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.3.1.aar\2614d7e1d6a51933d89352fd46b53bed\AndroidManifest.xml:25:5-27:34

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './Pages/loginPage.dart';
+import './Pages/home.dart';
 import './Components/bottomtab.dart';
 import './Pages/dergidetailPage.dart';
 
@@ -11,6 +12,7 @@ void main() => runApp(App());
   final routes = <String, WidgetBuilder>{
     LoginPage.tag: (context) => LoginPage(),
     Bottomtab.tag: (context) => Bottomtab(),
+    Home.tag: (context) => Home(),
     //DergiDetail.tag: (context) => DergiDetail(),
   };
 
@@ -19,7 +21,7 @@ void main() => runApp(App());
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: Bottomtab(),
       routes: routes,
     );
   }

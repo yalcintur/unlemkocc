@@ -5,12 +5,13 @@ import 'package:carousel_pro/carousel_pro.dart';
 
 
 class Home extends StatelessWidget {
+  static String tag = 'home-page';
 
 
   List<NetworkImage> resimler=[
-    new NetworkImage('https://www.tccb.gov.tr/assets/resim/genel/receptayyiperdogan-bio.jpg'),
-    new NetworkImage('https://i.pinimg.com/originals/18/10/e3/1810e308bbcc1fded5729492ff5124a2.jpg'),
-    new NetworkImage('https://im.haberturk.com/2017/11/08/ver1510155923/elon-musk-ve-recep-tayyip-erdogan_1704957_620x410.jpg'),
+    new NetworkImage('https://drive.google.com/uc?export=download&id=1BC5x52YJU1Ij-nTaVHiI6ppcicYJnU1p'),
+    new NetworkImage('https://drive.google.com/uc?export=download&id=1BC5x52YJU1Ij-nTaVHiI6ppcicYJnU1p'),
+    new NetworkImage('https://drive.google.com/uc?export=download&id=1BC5x52YJU1Ij-nTaVHiI6ppcicYJnU1p'),
 
 
   ];

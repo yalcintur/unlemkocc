@@ -1,50 +1,51 @@
 import './video.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'dart:async';
+
 class VideoDao {
 
-  static final List<Video> videos = [
-    const Video(
-      id: "1",
-      title: "Muratla Akmacalar",
-      desc: "Aqtık",
-      link: "url",
-      seen: "240",
-     
-    ),
-    const Video(
-      id: "2",
-      title: "Yalçınla Akmacalar",
-      desc: "Aqtık",
-      link: "url",
-      seen: "240",
-     
-    ),
-    const Video(
-      id: "3",
-      title: "Babamla Akmacalar",
-      desc: "Aqtık",
-      link: "url",
-      seen: "240",
-     
-    ),
-    const Video(
-      id: "4",
-      title: "Zeyeple Akmacalar",
-      desc: "Aqtık",
-      link: "url",
-      seen: "240",
-     
-    ),
-    const Video(
-      id: "5",
-      title: "Fakoyla Akmacalar",
-      desc: "Aqtık",
-      link: "url",
-      seen: "240",
-     
-    ),
-  ];
+  static List<Video> videos;
 
-  static Video getvideobyid(id) {
+  static List<Video> parsePhotos(String responseBody) {
+    final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
+
+    return parsed.map<Video>((json) => Video.fromJson(json)).toList();
+  }
+  static Future<List<Video>> fetchPhotos() async {
+    final response =
+    await http.get('https://arcane-crag-49959.herokuapp.com/videolar');
+    print(response.body);
+
+    return parsePhotos(response.body);
+  }
+
+
+  static  Future<List<Video>> dergicallback() async{
+
+    if(videos == null){
+      var parsedfetch = await fetchPhotos();
+      videos = parsedfetch;
+      return parsedfetch;
+
+    }else{
+
+      return videos;
+
+    }
+  }
+
+
+  static Future<List<Video>> refreshList() async {
+    var fetched = await fetchPhotos();
+    videos = fetched;
+    return fetched;
+  }
+
+
+
+
+    static Video getvideobyid(id) {
     return videos
         .where((p) => p.id == id)
         .first;

@@ -15,54 +15,74 @@ class _TimerState extends State<Timerr> {
 
 
 
- static RandomColor _randomColor = RandomColor();
+  static RandomColor _randomColor = RandomColor();
 
- Color _color = _randomColor.randomColor(
-   colorBrightness: ColorBrightness.light,
-  colorHue: ColorHue.red
 
- );
-
+  Color _color;
   var expired;
-   String end,tit,exptit;
-   static String endpoint,titles,expiredtitle;
+  String end,tit,exptit;
+  static String endpoint,titles,expiredtitle;
   int remday = 0, remhour = 0, remmin = 0, remsec = 0;
   _TimerState(this.end,this.tit,this.exptit);
-  
+
   var _now = DateTime.now();
   Timer _everySecond;
   var endpointparsed;
 
-  
+
   Widget timerbox(){
 
-    return Container( 
-      width: 375.0,
-      height: 128.0,
-      color: _color,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          new FittedBox(
-          
-          child: new Text("${tit.toUpperCase()}",style: Theme.TextStyles.timerfont,),),
-          new Container(height: 8.0,),
-          new Text( "$remday : $remhour : $remmin : $remsec",style: Theme.TextStyles.kosebas),
-          
-        ],
-      ),
-    );
+    if(expired != true){
+      return Container(
+        width: 375.0,
+        height: 128.0,
+        color: _color,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            new FittedBox(
+
+              child: new Text("${tit.toUpperCase()}",style: Theme.TextStyles.timerfont,),),
+            new Container(height: 8.0,),
+            new Text( "$remday : $remhour : $remmin : $remsec",style: Theme.TextStyles.kosebas),
+
+          ],
+        ),
+      );
+
+    }else{
+      return Container(
+        width: 375.0,
+        height: 128.0,
+        color: _color,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            new FittedBox(
+
+              child: new Text("${tit.toUpperCase()}",style: Theme.TextStyles.timerfont,),),
+            new Container(height: 8.0,),
+            new Text( "$exptit",style: Theme.TextStyles.kosebas),
+
+          ],
+        ),
+      );
+
+    }
+
+
 
   }
 
- @override
+  @override
   void dispose() {
     super.dispose();
     _everySecond.cancel();
   }
 
-@override
+  @override
   void initState() {
     super.initState();
     endpoint = end;
@@ -70,6 +90,13 @@ class _TimerState extends State<Timerr> {
     expiredtitle = exptit;
     endpointparsed =DateTime.parse(endpoint);
 
+    setState(() {
+      _color = _randomColor.randomColor(
+          colorBrightness: ColorBrightness.light,
+          colorHue: ColorHue.red
+
+      );
+    });
 
 
     //  RopoState bilge = new RopoState();
@@ -81,9 +108,9 @@ class _TimerState extends State<Timerr> {
           _now.difference(endpointparsed).inSeconds == 0) {
         //     bilge.updateexpired(false);
         setState(() {
-           expired = false;
-          });
-    
+          expired = false;
+        });
+
         //    debugPrint(_now.toString());
 
         _now = DateTime.now();
@@ -100,11 +127,11 @@ class _TimerState extends State<Timerr> {
           });
         }else print("mount failure");
       } else {
-           setState(() {
-           expired = true;
-          });
-    
-    //    debugPrint("expired");
+        setState(() {
+          expired = true;
+        });
+
+        //    debugPrint("expired");
 
 
         //  bilge.updateexpired(false);
@@ -129,7 +156,7 @@ class _TimerState extends State<Timerr> {
   @override
   Widget build(BuildContext context) {
     return Container(
-       child: timerbox(),
+      child: timerbox(),
     );
   }
 }
