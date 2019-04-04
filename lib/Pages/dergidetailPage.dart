@@ -3,6 +3,7 @@ import '../Components/detailTile.dart';
 import '../Theme.dart' as Theme;
 import '../Model/detailBars.dart';
 import '../Model/detailBar.dart';
+import '../Components/bottomtab.dart';
 
 class DergiDetail extends StatefulWidget {
   static String tag = 'dergi-detail';
@@ -51,7 +52,10 @@ class _DergiDetailState extends State<DergiDetail> {
         new Container(
           child: new GestureDetector(
               onTap: () {
-                Navigator.pop(context);
+//                Navigator.push(context, MaterialPageRoute(builder: (_) {
+//                  return Bottomtab();
+//                }));
+              Navigator.pop(context);
               },
               child: new Icon(
                 Icons.arrow_back_ios,
@@ -75,6 +79,7 @@ class _DergiDetailState extends State<DergiDetail> {
               ),
               margin: EdgeInsets.all(6.0),
               child: Hero(
+                key: Key("sda"),
                 tag: indexed,
                 child: new Container(
                   width: 199.0,
@@ -102,7 +107,7 @@ class _DergiDetailState extends State<DergiDetail> {
                     itemCount: details.length,
                     itemBuilder: (BuildContext ctxt, int index) {
                       return DetailTile(
-                          details[index].title, details[index].link);
+                          details[index].title, details[index].link,dergiimage,baslik,indexed);
                     }))
           ],
         ),
@@ -119,7 +124,7 @@ class _DergiDetailState extends State<DergiDetail> {
   Widget build(BuildContext context) {
     return Container(
       color: Theme.Colors.pagebackground,
-      child: _isloaded(),
+      child: _isloaded()
     );
   }
 }

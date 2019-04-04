@@ -22,12 +22,14 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
-  auto_size_text: ^0.2.2
+  auto_size_text: ^1.1.1
   #flutter_webview_plugin: ^0.3.0+2
   flutter_youtube: ^1.1.4
   pdf_viewer_plugin: ^0.0.5
   path_provider: "^0.4.1"
   http:
+  webview_flutter: ^0.2.0
+
 
 
 
@@ -48,7 +50,12 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - assets/kitap.png
+    - assets/BottomBar1.png
+    - assets/BottomBar2.png
+    - assets/BottomBar3.png
+    - assets/BottomBar4.png
+    - assets/BottomBar5.png
+    - assets/kitap@3x.png
     - assets/lake.jpg
     - assets/mikrofon.png
     - assets/ev.png

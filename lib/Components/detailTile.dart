@@ -4,9 +4,10 @@ import './WebView.dart';
 
 class DetailTile extends StatelessWidget {
   String url, title;
+  int indexed;
+  var dergiimage,baslik;
 
-  DetailTile(this.title, this.url,);
-
+  DetailTile(this.title, this.url,this.dergiimage,this.baslik, this.indexed);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,7 +15,7 @@ class DetailTile extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           Navigator.push(context, MaterialPageRoute(builder: (_) {
-            return Webview(url);
+            return WebViewPlugin(url,dergiimage,baslik,indexed);
           }));
         },
         child: Container(

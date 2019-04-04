@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import '../Theme.dart' as Theme;
 import 'package:carousel_pro/carousel_pro.dart';
+import '../Algorithms/dergimap.dart';
+
+
 
 
 
@@ -21,20 +24,20 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Theme.Colors.pagebackground,
+      child: new SingleChildScrollView(
       child: new Column(
         children: <Widget>[
           new Container(height: 30.0,),
           new SizedBox(
-              height: 420.0,
-              width: 300.0,
+              height: HomeAlgorithm.Crousel(context).height.toDouble(),
+              width: HomeAlgorithm.Crousel(context).width.toDouble(),
               child: new Carousel(
                 images: resimler,
               )
           ),
-
         ],
       ),
-
+      ),
     );
   }
 }

@@ -11,18 +11,18 @@ class Timers{
 
   static final List<Timer> timers = [
     const Timer(
-      enddate: "2019-03-15 11:23:30",
+      enddate: "2019-04-19 11:23:30",
       title: "Sevgi Gönül",
       expiredtext: "helal",
     ),
     const Timer(
-      enddate: "2019-03-11 10:10:30",
+      enddate: "2019-05-11 10:10:30",
       title: "Okulların Kapanması",
       expiredtext: "helal",
     ),
     const Timer(
       enddate: "2019-04-24 11:23:30",
-      title: "nEr",
+      title: "STFU YOU MOTHER SHİT..............",
       expiredtext: "helal",
     ),
     const Timer(

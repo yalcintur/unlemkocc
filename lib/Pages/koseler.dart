@@ -1,64 +1,90 @@
 import 'package:flutter/material.dart';
 import '../Components/kosetile.dart';
-import '../Theme.dart' as Theme;
-
+import '../Model/kose.dart';
+ import '../Theme.dart' as Theme;
+ import '../Algorithms/dergimap.dart';
 
 class Koseler extends StatefulWidget {
   _KoselerState createState() => _KoselerState();
 }
 
 class _KoselerState extends State<Koseler> {
-  //List<String> koselist = [""];
+  ScrollController _controller = ScrollController();
+  var catagoria = "trend";
+  int ElementPosition = 0;
+  List<Catog> catoglist = Catogs.getlist();
+    bool ask(int pos){
+      print ("tried");
+      if(pos == ElementPosition){
+       // print("true");
+        return false;
+      }else {
+        //print("false");
+        return true;
+      }
+
+    }
+   Widget NavTitle(int pos,String tit){
+     if( pos== ElementPosition){
+
+       return new Center( child:Text(tit.toString(),style: Theme.TextStyles.navElementTitleHighLit));
+     }else return  new Center( child:Text(tit.toString(),style: Theme.TextStyles.navElementTitle));
+   }
+   Widget NavElement(String title,String route,int position){
+     double itemSize = 95.0;
+    return new Container(
+      height: 40.0,
+      width: itemSize,
+      child: new GestureDetector(
+        onTap: (){
+          var durationnn = KoselerAlgorithm.calculateposition(itemSize,_controller.offset, position,).abs().toInt()/2;
+          _controller.animateTo(KoselerAlgorithm.calculateposition(itemSize,_controller.offset, position,),curve: Curves.linear,duration: Duration(milliseconds: durationnn.toInt()));
+          setState(() {
+            catagoria = route; //Hangi Sayfa Renderlanıcak
+            ElementPosition = position;
+          });
+
+        },
+        //child: new Center(
+        //    child: Text(title.toUpperCase(),style: Theme.TextStyles.navElementTitle,)
+          child: ask(position) ? new Center(child:Text(title.toUpperCase(),style: Theme.TextStyles.navElementTitle,)) : Center(child: Text(title.toUpperCase(),style: Theme.TextStyles.navElementTitleHighLit,))
+        //),
+      ),
+
+    );
+  }
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
-    return new Container(color: Theme.Colors.pagebackground,child:  new ListView.builder(
-  padding: EdgeInsets.all(8.0),
-  
-  itemExtent: 132.0,
-  itemCount: dergis.length,
-  itemBuilder: (BuildContext context, int index) {
-    return Kosetile(dergis[index].image, dergis[index].kosebaslik, dergis[index].koseicerik);
-  },
-    ));
+
+    var navBar = new Container(
+        color: Colors.black,
+        width: MediaQuery.of(context).size.width,
+        height: 40.0,
+        //alignment: Alignment.center,
+        child: //new Center(child:
+        ListView.builder(
+            scrollDirection: Axis.horizontal,
+            controller: _controller,
+            itemCount: catoglist.length,
+            itemBuilder: (context, position) {
+              return  NavElement(catoglist[position].title,catoglist[position].route,position);
+
+            }));
+
+    return new Container(
+      color: Theme.Colors.pagebackground,
+      child: new Column(
+        children: <Widget>[
+          navBar, // Navbar
+
+        ],
+      ),
+    );
   }
-  //!!!!!!!!!!!!!!!!!!!!!!!!!!! Yukardaki Listeyi ekle ve indexe göre şey yap işte yaparsın aslansın
-  static final List<Kose> dergis = [
-    const Kose(
-      
-      image: "assets/renaisance.png",
-      kosebaslik: "FELSEFE KÖŞESİ",
-      koseicerik: "Yazarın adı soyadı",     
-    ),
-    const Kose(
-      
-      image: "assets/vincent.png",
-      kosebaslik: "SANAT KÖŞESİ",
-      koseicerik: "Sanat falan",     
-    ),
-    const Kose(
-      
-      image: "assets/usain.png",
-      kosebaslik: "SPOR KÖŞESİ",
-      koseicerik: "123",     
-    ),
-    const Kose(
-      
-      image: "assets/book.png",
-      kosebaslik: "EDEBİYAT KÖŞESİ",
-      koseicerik: "Kötü Çocuk okuyun çok güğzel",     
-    ),
-  ];
-}
-
-
-
-
-class Kose {
-  
-  final String kosebaslik;
-  final String image;
-  final String koseicerik;
-  const Kose({this.image, this.kosebaslik, this.koseicerik});
 }
 

@@ -41,4 +41,9 @@ class TextStyles {
       color: Color(0xFFffffff), fontFamily: 'DINCondensedBold', fontSize: 30.0);
   static const TextStyle detailpagetilecapital= const TextStyle(
       color: Color(0xFF000000), fontFamily: 'DINCondensedBold', fontSize: 30.0);
+  static const TextStyle navElementTitle= const TextStyle(
+      color: Color(0xFFffffff), fontFamily: 'DINCondensedBold', fontSize: 25.0);
+  static const TextStyle navElementTitleHighLit= const TextStyle(
+      color: Colors.pagebackground, fontFamily: 'DINCondensedBold', fontSize: 25.0,decoration: TextDecoration.underline, decorationColor: Color.fromRGBO(244,14,8,100));
+
 }

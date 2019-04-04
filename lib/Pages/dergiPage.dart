@@ -57,9 +57,9 @@ class _DergiPageState extends State<DergiPage> {
           itemCount: dergiler.length,
           gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              mainAxisSpacing: 1.0,
+              mainAxisSpacing: 15.0,
               crossAxisSpacing: 1.0,
-              childAspectRatio: 0.7),
+              childAspectRatio: 0.74),//(MediaQuery.of(context).size.height/900)-(MediaQuery.of(context).size.height/4000)),
           itemBuilder: (BuildContext context, int index) {
             return Container(
               alignment: Alignment.center,

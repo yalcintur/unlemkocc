@@ -4,6 +4,7 @@ import io.flutter.plugin.common.PluginRegistry;
 import io.github.ponnamkarthik.flutteryoutube.FlutterYoutubePlugin;
 import io.flutter.plugins.pathprovider.PathProviderPlugin;
 import com.example.pdfviewerplugin.PdfViewerPlugin;
+import io.flutter.plugins.webviewflutter.WebViewFlutterPlugin;
 
 /**
  * Generated file. Do not edit.
@@ -16,6 +17,7 @@ public final class GeneratedPluginRegistrant {
     FlutterYoutubePlugin.registerWith(registry.registrarFor("io.github.ponnamkarthik.flutteryoutube.FlutterYoutubePlugin"));
     PathProviderPlugin.registerWith(registry.registrarFor("io.flutter.plugins.pathprovider.PathProviderPlugin"));
     PdfViewerPlugin.registerWith(registry.registrarFor("com.example.pdfviewerplugin.PdfViewerPlugin"));
+    WebViewFlutterPlugin.registerWith(registry.registrarFor("io.flutter.plugins.webviewflutter.WebViewFlutterPlugin"));
   }
 
   private static boolean alreadyRegisteredWith(PluginRegistry registry) {

@@ -3,36 +3,28 @@ import 'dart:async';
 import 'package:random_color/random_color.dart';
 import '../Theme.dart' as Theme;
 
-
-
 class Timerr extends StatefulWidget {
-  String endpoint,titles,expiredtitle;
-  Timerr(this.endpoint,this.titles,this.expiredtitle);
-  _TimerState createState() => new _TimerState(endpoint,titles,expiredtitle);
+  String endpoint, titles, expiredtitle;
+  Timerr(this.endpoint, this.titles, this.expiredtitle);
+  _TimerState createState() => new _TimerState(endpoint, titles, expiredtitle);
 }
 
 class _TimerState extends State<Timerr> {
-
-
-
   static RandomColor _randomColor = RandomColor();
-
 
   Color _color;
   var expired;
-  String end,tit,exptit;
-  static String endpoint,titles,expiredtitle;
+  String end, tit, exptit;
+  static String endpoint, titles, expiredtitle;
   int remday = 0, remhour = 0, remmin = 0, remsec = 0;
-  _TimerState(this.end,this.tit,this.exptit);
+  _TimerState(this.end, this.tit, this.exptit);
 
   var _now = DateTime.now();
   Timer _everySecond;
   var endpointparsed;
 
-
-  Widget timerbox(){
-
-    if(expired != true){
+  Widget timerbox() {
+    if (expired != true) {
       return Container(
         width: 375.0,
         height: 128.0,
@@ -41,39 +33,58 @@ class _TimerState extends State<Timerr> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            new FittedBox(
-
-              child: new Text("${tit.toUpperCase()}",style: Theme.TextStyles.timerfont,),),
-            new Container(height: 8.0,),
-            new Text( "$remday : $remhour : $remmin : $remsec",style: Theme.TextStyles.kosebas),
-
+            new SizedBox(
+                width: 345.0,
+                height: 40.0,
+                child: new FittedBox(
+                  child: new Text(
+                    "${tit.toUpperCase()}",
+                    style: Theme.TextStyles.timerfont,
+                  ),
+                )),
+            new Container(
+              height: 8.0,
+            ),
+            new SizedBox(
+                width: 345.0,
+                height: 50.0,
+                child: new FittedBox(
+                    child: new Text("$remday : $remhour : $remmin : $remsec",
+                        style: Theme.TextStyles.kosebas))),
           ],
         ),
       );
-
-    }else{
+    } else {
       return Container(
-        width: 375.0,
+        width: 365.0,
         height: 128.0,
         color: _color,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            new FittedBox(
-
-              child: new Text("${tit.toUpperCase()}",style: Theme.TextStyles.timerfont,),),
-            new Container(height: 8.0,),
-            new Text( "$exptit",style: Theme.TextStyles.kosebas),
-
+            new SizedBox(
+                width: 345.0,
+                height: 40.0,
+                child: new FittedBox(
+                  child: new Text(
+                    "${tit.toUpperCase()}",
+                    style: Theme.TextStyles.timerfont,
+                  ),
+                )),
+            new Container(
+              height: 8.0,
+            ),
+            new SizedBox(
+                width: 345.0,
+                height: 50.0,
+                child: new FittedBox(
+                    child:
+                        new Text("$exptit", style: Theme.TextStyles.kosebas))),
           ],
         ),
       );
-
     }
-
-
-
   }
 
   @override
@@ -88,16 +99,12 @@ class _TimerState extends State<Timerr> {
     endpoint = end;
     titles = tit;
     expiredtitle = exptit;
-    endpointparsed =DateTime.parse(endpoint);
+    endpointparsed = DateTime.parse(endpoint);
 
     setState(() {
       _color = _randomColor.randomColor(
-          colorBrightness: ColorBrightness.light,
-          colorHue: ColorHue.red
-
-      );
+          colorBrightness: ColorBrightness.light, colorHue: ColorHue.red);
     });
-
 
     //  RopoState bilge = new RopoState();
 
@@ -125,7 +132,8 @@ class _TimerState extends State<Timerr> {
             remmin = int.parse(remai.inMinutes.toString()) % 60;
             remsec = int.parse(remai.inSeconds.toString()) % 60;
           });
-        }else print("mount failure");
+        } else
+          print("mount failure");
       } else {
         setState(() {
           expired = true;
@@ -133,25 +141,10 @@ class _TimerState extends State<Timerr> {
 
         //    debugPrint("expired");
 
-
         //  bilge.updateexpired(false);
       }
     });
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   @override
   Widget build(BuildContext context) {

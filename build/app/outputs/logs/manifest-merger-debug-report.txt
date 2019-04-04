@@ -7,22 +7,37 @@ INJECTED from D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\android\app\src\mai
 MERGED from [:pdf_viewer_plugin] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\pdf_viewer_plugin\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
 MERGED from [:path_provider] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\path_provider\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
 MERGED from [:flutter_youtube] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\flutter_youtube\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-14:12
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\623610ad5b7216dfd7240a99f81ab16c\AndroidManifest.xml:17:1-22:12
-MERGED from [com.github.barteksc:android-pdf-viewer:2.8.2] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\android-pdf-viewer-2.8.2.aar\8354651b70746b13341e2dcd53bf32ba\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:multidex:1.0.2] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\79e0fa3b98e65255372082882abd48e2\AndroidManifest.xml:17:1-22:12
-MERGED from [com.github.barteksc:pdfium-android:1.7.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\pdfium-android-1.7.1.aar\e93edb675c2522b8f31c1fee2fef3ffe\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\1d1afc8369e61a9627cd19ea00a74515\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\b3d40add0fc9fea405397c0a10c9e458\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\7a2348372872ff4bfba9045b8b8e0ad1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\7ea10081ab1d67e1a33e5c7ec840c1ba\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\23624086af10c888f4029274c22921e5\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\227295ba1ac8a9f15a754b36d7de6be4\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.3.1.aar\2614d7e1d6a51933d89352fd46b53bed\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\5a9e972a30a3e1f21d0a13d9dd6b85de\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\a2d60a4c102294e2bc1a985ee6ea61f4\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\2a6612c451627de1de8c328a525a408a\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\fea3e32c28e8a61a277bc7ea91d6b788\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\0570502d362594006c4058cc8cff38b5\AndroidManifest.xml:17:1-22:12
+MERGED from [:webview_flutter] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\webview_flutter\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.appcompat:appcompat:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\appcompat-1.0.0-rc01.aar\b60f56a033924f27e5efdccb27df71e5\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.barteksc:android-pdf-viewer:2.8.2] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\jetified-android-pdf-viewer-2.8.2.aar\affbe4f43382f0340bdcf14962559de7\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\multidex-2.0.0.aar\1b45703a6e77a9ce888a57f7076f71cf\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.barteksc:pdfium-android:1.7.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\jetified-pdfium-android-1.7.1.aar\fba2e98d7437f01ef651b46659caf838\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\legacy-support-v4-1.0.0-rc01.aar\dca3cc0a7ef0554c409ff2c63255f25e\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\fragment-1.0.0-rc01.aar\d7f766e88069d3982d1c9d3e605d3621\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\vectordrawable-animated-1.0.0-rc01.aar\68993838ed2fc577891e622104d11805\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\legacy-support-core-ui-1.0.0-rc01.aar\3902ce95258ff73c9ef0fd390db15eed\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\legacy-support-core-utils-1.0.0-rc01.aar\12b06f3c4d39be4bb3a16e5ae3b86504\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\vectordrawable-1.0.0-rc01.aar\d4da3685e0fbc65f71701169c412d73b\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\loader-1.0.0-rc01.aar\be41395d25d717a6d01f2848f93e1bcb\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\viewpager-1.0.0-rc01.aar\b9f0eab6921bc8676d9b3da6768404e8\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-1.0.0-rc01.aar\ffb1b9a4cc79ccc983dede6620a67453\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\drawerlayout-1.0.0-rc01.aar\5de58a09fdc01bc2373d1c76d6a1fc1d\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-1.0.0-rc01.aar\7a1e8b64c1876cf9612ffa9f0d86796b\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\customview-1.0.0-rc01.aar\5627a140a65ba38310d42125ae493c3b\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-1.0.0-rc01.aar\5a44ec8047035722a999abdaea67403d\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-1.0.0-rc01.aar\47188b000ebb3525a47a36eb9b9035f7\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\media-1.0.0-rc01.aar\93d08221598215d59ad5efd518fde52b\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\core-1.0.0-rc01.aar\7648e3ac136298438cd7188c80460e55\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0-rc01.aar\fa129b7d1b34c4c9e47dab0ab0bb2291\AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\cursoradapter-1.0.0-rc01.aar\60e3319542627667ea5015e5e6c8820f\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\documentfile-1.0.0-rc01.aar\6bca7fdb9df6e90d9dd4c325b4a12002\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-1.0.0-rc01.aar\0589524237a1fb1f69738e19568a48ee\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\print-1.0.0-rc01.aar\67f62b7b3b11c5c19e3c965c0d8dfe4e\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\interpolator-1.0.0-rc01.aar\449f55ac1d522a186ea93543de4fe6d3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.0.0-rc01.aar\55ae5d4a80561b0bb12961cc2bb8536d\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\lifecycle-viewmodel-2.0.0-rc01.aar\dc4bdf4f8ef57057510353d3f54feb05\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-core-2.0.0-rc01.aar\6fbc9bd219a2c05dd09868f0e05f5641\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\core-runtime-2.0.0-rc01.aar\fe9c40a302cc337778ccde16836d4ff0\AndroidManifest.xml:17:1-22:12
 INJECTED from D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\android\app\src\main\AndroidManifest.xml:1:1-39:12
 INJECTED from D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\android\app\src\main\AndroidManifest.xml:1:1-39:12
 INJECTED from D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\android\app\src\main\AndroidManifest.xml:1:1-39:12
@@ -48,10 +63,12 @@ application
 ADDED from D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\android\app\src\main\AndroidManifest.xml:15:5-38:19
 MERGED from [:flutter_youtube] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\flutter_youtube\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-12:19
 MERGED from [:flutter_youtube] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\flutter_youtube\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-12:19
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\1d1afc8369e61a9627cd19ea00a74515\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\1d1afc8369e61a9627cd19ea00a74515\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.3.1.aar\2614d7e1d6a51933d89352fd46b53bed\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.3.1.aar\2614d7e1d6a51933d89352fd46b53bed\AndroidManifest.xml:29:5-20
+MERGED from [androidx.core:core:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\core-1.0.0-rc01.aar\7648e3ac136298438cd7188c80460e55\AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\core-1.0.0-rc01.aar\7648e3ac136298438cd7188c80460e55\AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0-rc01.aar\fa129b7d1b34c4c9e47dab0ab0bb2291\AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0-rc01.aar\fa129b7d1b34c4c9e47dab0ab0bb2291\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\core-1.0.0-rc01.aar\7648e3ac136298438cd7188c80460e55\AndroidManifest.xml:22:18-86
 	android:label
 		ADDED from D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\android\app\src\main\AndroidManifest.xml:17:9-34
 	android:icon
@@ -98,42 +115,70 @@ MERGED from [:path_provider] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\buil
 MERGED from [:path_provider] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\path_provider\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_youtube] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\flutter_youtube\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_youtube] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\flutter_youtube\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\623610ad5b7216dfd7240a99f81ab16c\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\623610ad5b7216dfd7240a99f81ab16c\AndroidManifest.xml:20:5-44
-MERGED from [com.github.barteksc:android-pdf-viewer:2.8.2] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\android-pdf-viewer-2.8.2.aar\8354651b70746b13341e2dcd53bf32ba\AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.barteksc:android-pdf-viewer:2.8.2] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\android-pdf-viewer-2.8.2.aar\8354651b70746b13341e2dcd53bf32ba\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:multidex:1.0.2] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\79e0fa3b98e65255372082882abd48e2\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:multidex:1.0.2] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\79e0fa3b98e65255372082882abd48e2\AndroidManifest.xml:20:5-43
-MERGED from [com.github.barteksc:pdfium-android:1.7.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\pdfium-android-1.7.1.aar\e93edb675c2522b8f31c1fee2fef3ffe\AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.barteksc:pdfium-android:1.7.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\pdfium-android-1.7.1.aar\e93edb675c2522b8f31c1fee2fef3ffe\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\1d1afc8369e61a9627cd19ea00a74515\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\1d1afc8369e61a9627cd19ea00a74515\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\b3d40add0fc9fea405397c0a10c9e458\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\b3d40add0fc9fea405397c0a10c9e458\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\7a2348372872ff4bfba9045b8b8e0ad1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\7a2348372872ff4bfba9045b8b8e0ad1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\7ea10081ab1d67e1a33e5c7ec840c1ba\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\7ea10081ab1d67e1a33e5c7ec840c1ba\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\23624086af10c888f4029274c22921e5\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\23624086af10c888f4029274c22921e5\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\227295ba1ac8a9f15a754b36d7de6be4\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\227295ba1ac8a9f15a754b36d7de6be4\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.3.1.aar\2614d7e1d6a51933d89352fd46b53bed\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.3.1.aar\2614d7e1d6a51933d89352fd46b53bed\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\5a9e972a30a3e1f21d0a13d9dd6b85de\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\5a9e972a30a3e1f21d0a13d9dd6b85de\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\a2d60a4c102294e2bc1a985ee6ea61f4\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\a2d60a4c102294e2bc1a985ee6ea61f4\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\2a6612c451627de1de8c328a525a408a\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\2a6612c451627de1de8c328a525a408a\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\fea3e32c28e8a61a277bc7ea91d6b788\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\fea3e32c28e8a61a277bc7ea91d6b788\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\0570502d362594006c4058cc8cff38b5\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\0570502d362594006c4058cc8cff38b5\AndroidManifest.xml:20:5-44
+MERGED from [:webview_flutter] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\webview_flutter\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-7:41
+MERGED from [:webview_flutter] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\webview_flutter\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\appcompat-1.0.0-rc01.aar\b60f56a033924f27e5efdccb27df71e5\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\appcompat-1.0.0-rc01.aar\b60f56a033924f27e5efdccb27df71e5\AndroidManifest.xml:20:5-44
+MERGED from [com.github.barteksc:android-pdf-viewer:2.8.2] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\jetified-android-pdf-viewer-2.8.2.aar\affbe4f43382f0340bdcf14962559de7\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.barteksc:android-pdf-viewer:2.8.2] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\jetified-android-pdf-viewer-2.8.2.aar\affbe4f43382f0340bdcf14962559de7\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\multidex-2.0.0.aar\1b45703a6e77a9ce888a57f7076f71cf\AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\multidex-2.0.0.aar\1b45703a6e77a9ce888a57f7076f71cf\AndroidManifest.xml:20:5-43
+MERGED from [com.github.barteksc:pdfium-android:1.7.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\jetified-pdfium-android-1.7.1.aar\fba2e98d7437f01ef651b46659caf838\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.barteksc:pdfium-android:1.7.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\jetified-pdfium-android-1.7.1.aar\fba2e98d7437f01ef651b46659caf838\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\legacy-support-v4-1.0.0-rc01.aar\dca3cc0a7ef0554c409ff2c63255f25e\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\legacy-support-v4-1.0.0-rc01.aar\dca3cc0a7ef0554c409ff2c63255f25e\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\fragment-1.0.0-rc01.aar\d7f766e88069d3982d1c9d3e605d3621\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\fragment-1.0.0-rc01.aar\d7f766e88069d3982d1c9d3e605d3621\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\vectordrawable-animated-1.0.0-rc01.aar\68993838ed2fc577891e622104d11805\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\vectordrawable-animated-1.0.0-rc01.aar\68993838ed2fc577891e622104d11805\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\legacy-support-core-ui-1.0.0-rc01.aar\3902ce95258ff73c9ef0fd390db15eed\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\legacy-support-core-ui-1.0.0-rc01.aar\3902ce95258ff73c9ef0fd390db15eed\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\legacy-support-core-utils-1.0.0-rc01.aar\12b06f3c4d39be4bb3a16e5ae3b86504\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\legacy-support-core-utils-1.0.0-rc01.aar\12b06f3c4d39be4bb3a16e5ae3b86504\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\vectordrawable-1.0.0-rc01.aar\d4da3685e0fbc65f71701169c412d73b\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\vectordrawable-1.0.0-rc01.aar\d4da3685e0fbc65f71701169c412d73b\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\loader-1.0.0-rc01.aar\be41395d25d717a6d01f2848f93e1bcb\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\loader-1.0.0-rc01.aar\be41395d25d717a6d01f2848f93e1bcb\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\viewpager-1.0.0-rc01.aar\b9f0eab6921bc8676d9b3da6768404e8\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\viewpager-1.0.0-rc01.aar\b9f0eab6921bc8676d9b3da6768404e8\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-1.0.0-rc01.aar\ffb1b9a4cc79ccc983dede6620a67453\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-1.0.0-rc01.aar\ffb1b9a4cc79ccc983dede6620a67453\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\drawerlayout-1.0.0-rc01.aar\5de58a09fdc01bc2373d1c76d6a1fc1d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\drawerlayout-1.0.0-rc01.aar\5de58a09fdc01bc2373d1c76d6a1fc1d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-1.0.0-rc01.aar\7a1e8b64c1876cf9612ffa9f0d86796b\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-1.0.0-rc01.aar\7a1e8b64c1876cf9612ffa9f0d86796b\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\customview-1.0.0-rc01.aar\5627a140a65ba38310d42125ae493c3b\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\customview-1.0.0-rc01.aar\5627a140a65ba38310d42125ae493c3b\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-1.0.0-rc01.aar\5a44ec8047035722a999abdaea67403d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-1.0.0-rc01.aar\5a44ec8047035722a999abdaea67403d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-1.0.0-rc01.aar\47188b000ebb3525a47a36eb9b9035f7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-1.0.0-rc01.aar\47188b000ebb3525a47a36eb9b9035f7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\media-1.0.0-rc01.aar\93d08221598215d59ad5efd518fde52b\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\media-1.0.0-rc01.aar\93d08221598215d59ad5efd518fde52b\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\core-1.0.0-rc01.aar\7648e3ac136298438cd7188c80460e55\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\core-1.0.0-rc01.aar\7648e3ac136298438cd7188c80460e55\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0-rc01.aar\fa129b7d1b34c4c9e47dab0ab0bb2291\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0-rc01.aar\fa129b7d1b34c4c9e47dab0ab0bb2291\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\cursoradapter-1.0.0-rc01.aar\60e3319542627667ea5015e5e6c8820f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\cursoradapter-1.0.0-rc01.aar\60e3319542627667ea5015e5e6c8820f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\documentfile-1.0.0-rc01.aar\6bca7fdb9df6e90d9dd4c325b4a12002\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\documentfile-1.0.0-rc01.aar\6bca7fdb9df6e90d9dd4c325b4a12002\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-1.0.0-rc01.aar\0589524237a1fb1f69738e19568a48ee\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-1.0.0-rc01.aar\0589524237a1fb1f69738e19568a48ee\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\print-1.0.0-rc01.aar\67f62b7b3b11c5c19e3c965c0d8dfe4e\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\print-1.0.0-rc01.aar\67f62b7b3b11c5c19e3c965c0d8dfe4e\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\interpolator-1.0.0-rc01.aar\449f55ac1d522a186ea93543de4fe6d3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\interpolator-1.0.0-rc01.aar\449f55ac1d522a186ea93543de4fe6d3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.0.0-rc01.aar\55ae5d4a80561b0bb12961cc2bb8536d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.0.0-rc01.aar\55ae5d4a80561b0bb12961cc2bb8536d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\lifecycle-viewmodel-2.0.0-rc01.aar\dc4bdf4f8ef57057510353d3f54feb05\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\lifecycle-viewmodel-2.0.0-rc01.aar\dc4bdf4f8ef57057510353d3f54feb05\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-core-2.0.0-rc01.aar\6fbc9bd219a2c05dd09868f0e05f5641\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-core-2.0.0-rc01.aar\6fbc9bd219a2c05dd09868f0e05f5641\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\core-runtime-2.0.0-rc01.aar\fe9c40a302cc337778ccde16836d4ff0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0-rc01] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\core-runtime-2.0.0-rc01.aar\fe9c40a302cc337778ccde16836d4ff0\AndroidManifest.xml:20:5-44
 INJECTED from D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\android\app\src\main\AndroidManifest.xml
 INJECTED from D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\android\app\src\main\AndroidManifest.xml
-	tools:overrideLibrary
-		ADDED from [com.android.support:support-v4:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\1d1afc8369e61a9627cd19ea00a74515\AndroidManifest.xml:23:9-51
 	android:targetSdkVersion
 		INJECTED from D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\android\app\src\main\AndroidManifest.xml
 		ADDED from D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\android\app\src\main\AndroidManifest.xml
@@ -148,11 +193,3 @@ ADDED from [:flutter_youtube] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\bui
 		ADDED from [:flutter_youtube] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\flutter_youtube\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:10:13-85
 	android:name
 		ADDED from [:flutter_youtube] D:\Desktop\WorkZone\FlutterWorkplace\unlemkocc\build\flutter_youtube\intermediates\merged_manýfests\debug\processDebugManifest\merged\AndroidManifest.xml:9:13-81
-meta-data#android.support.VERSION
-ADDED from [com.android.support:support-v4:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\1d1afc8369e61a9627cd19ea00a74515\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.3.1.aar\2614d7e1d6a51933d89352fd46b53bed\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.3.1.aar\2614d7e1d6a51933d89352fd46b53bed\AndroidManifest.xml:25:5-27:34
-	android:value
-		ADDED from [com.android.support:support-v4:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\1d1afc8369e61a9627cd19ea00a74515\AndroidManifest.xml:27:9-31
-	android:name
-		ADDED from [com.android.support:support-v4:25.3.1] C:\Users\isaturk\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\1d1afc8369e61a9627cd19ea00a74515\AndroidManifest.xml:26:9-47

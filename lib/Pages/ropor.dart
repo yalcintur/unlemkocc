@@ -4,6 +4,9 @@ import '../Components/ropSayac.dart';
 import '../Components/Stackvideostile.dart';
 import '../Model/videos.dart';
 import '../Model/video.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+
+
 
 class Ropo extends StatefulWidget {
   final RopoState state = new RopoState();
@@ -44,9 +47,10 @@ class RopoState extends State<Ropo> {
           // mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            new Text(
+            new AutoSizeText(
               "BU HAFTAKİ RÖPORTAJA",
               style: Theme.TextStyles.ropsayacc,
+              maxLines: 1,
             ),
             new Expanded(
               flex: 1,
@@ -54,10 +58,18 @@ class RopoState extends State<Ropo> {
                 color: Colors.black,
               ),
             ),
-            new Text(
-              "$remday : $remhour : $remmin : $remsec",
-              style: Theme.TextStyles.ropsayaccint,
-            ),
+            new Container(width: 10.0,),
+              new Center(
+
+              child :new FittedBox(child: Text(
+
+                "$remday : $remhour : $remmin : $remsec",
+                style: Theme.TextStyles.ropsayaccint,
+                //maxLines: 1,
+              )),)
+
+
+
           ],
         ),
       ),
