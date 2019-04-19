@@ -29,6 +29,8 @@ dependencies:
   path_provider: "^0.4.1"
   http:
   webview_flutter: ^0.2.0
+  carousel_slider: ^1.3.0
+
 
 
 
@@ -56,26 +58,23 @@ flutter:
     - assets/BottomBar4.png
     - assets/BottomBar5.png
     - assets/kitap@3x.png
-    - assets/lake.jpg
     - assets/mikrofon.png
-    - assets/ev.png
     - assets/koSEyaz@2x.png
     - assets/sayac.png
     - assets/auora@2x.png
     - assets/goZ.png
     - assets/like.png
     - assets/tawa@3x.png
-    - assets/dive@3x.png
-    - assets/boyutkapak@3x.png
     - assets/usain.png
     - assets/vincent.png
     - assets/renaisance.png
     - assets/book.png
     - assets/a.png
     - assets/ayseAlan.png
-    - assets/k@3x.png
     - assets/koSEyaz@3x.png
     - assets/unlem@3x.png
+    - assets/ropo.png
+    - assets/qmark.jpg
 
     
   
@@ -89,6 +88,9 @@ flutter:
     - family: DINCondensedBold
       fonts:
         - asset: fonts/DINCondensedBold.otf
+    - family: SourceSansPro-Semibold
+      fonts:
+        - asset: fonts/SourceSansPro-Semibold.otf
 
   # To add assets to your application, add an assets section, like this:
   # assets:

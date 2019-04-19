@@ -25,16 +25,31 @@ class TextStyles {
 
   static const TextStyle kosebas = const TextStyle(
       color: Color(0xFFffffff), fontFamily: 'Impact', fontSize: 45.0);
+  static const TextStyle KoseTitle = const TextStyle(
+      color: Color(0xFFffffff), fontFamily: 'Impact', fontSize: 25.0,shadows: <Shadow>[
+    Shadow(
+      offset: Offset(2.0, 5.0),
+      blurRadius: 16.0,
+      color: Color(0xFF000000),
+    ),],
+  );
   static const TextStyle ropsayacc = const TextStyle(
       color: Color(0xFFffffff), fontFamily: 'Impact', fontSize: 15.0);
   static const TextStyle ropsayaccint = const TextStyle(
       color: Color(0xFFffffff), fontFamily: 'Impact', fontSize: 30.0);
   static const TextStyle koseice = const TextStyle(
-      color: Color(0xFFffffff), fontFamily: 'Impact', fontSize: 20.0);
+      color: Color(0xFFffffff), fontFamily: 'Impact', fontSize: 20.0,);
+  static const TextStyle koseyazar = const TextStyle(
+      color: Color(0xFFffffff), fontFamily: 'Impact', fontSize: 18.0,shadows: <Shadow>[
+    Shadow(
+      offset: Offset(2.0, 5.0),
+      blurRadius: 16.0,
+      color: Color(0xFF000000),
+    ),],);
   static const TextStyle stackvideotitle = const TextStyle(
       color: Color(0xFFffffff), fontFamily: 'Impact', fontSize: 23.0);
   static const TextStyle timerfont = const TextStyle(
-      color: Color(0xFFffffff), fontFamily: 'PhosphateInline', fontSize: 40.0);
+      color: Color(0xFFffffff), fontFamily: 'DINCondensedBold', fontSize: 40.0);
   static const TextStyle detailpagetitle= const TextStyle(
       color: Color(0xFFffffff), fontFamily: 'DINCondensedBold', fontSize: 41.0);
   static const TextStyle detailpagetiletitle= const TextStyle(

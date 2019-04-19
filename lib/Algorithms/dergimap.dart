@@ -106,14 +106,8 @@ class DergiGraph  {
         objectwidth = queryData.size.width.toInt() - 50;
 
       objectheight = (420*objectwidth)~/300;
-
-      print("-----------------------------------------------------------------------------------------------");
-      print(objectwidth.toDouble().toString()+"  "+objectheight.toDouble().toString());
-      print("-----------------------------------------------------------------------------------------------");
       return Dimension(objectwidth.toDouble(),objectheight.toDouble());
     }
-
-
   }
 
 
@@ -131,14 +125,32 @@ class DergiGraph  {
       }
 
     }
-
-
-
-
   }
 
 
 
+  class RopoAlg{
+
+
+    static Dimension calculatebox(BuildContext context){
+      double screenwidth = MediaQuery.of(context).size.width;
+      double screenheight = MediaQuery.of(context).size.height;
+
+      double boxwidth = (358*screenwidth)/411;
+      double boxheight = (343*boxwidth)/358;
+
+      return Dimension(boxwidth,boxheight);
+
+
+    }
+
+    static double calculateTile(double height){
+
+
+      return (285*height)/343;
 
 
 
+    }
+
+  }

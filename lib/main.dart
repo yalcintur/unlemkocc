@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import './Pages/loginPage.dart';
 import './Pages/home.dart';
 import './Components/bottomtab.dart';
-import './Pages/dergidetailPage.dart';
+import './Pages/splash.dart';
 
 
 void main() => runApp(App());
@@ -21,7 +21,7 @@ void main() => runApp(App());
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Bottomtab(),
+      home: Splash(),
       routes: routes,
     );
   }

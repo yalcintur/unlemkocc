@@ -50,16 +50,17 @@ class _DergiPageState extends State<DergiPage> {
   }
 
   Widget GridLister() {
-    return OrientationBuilder(builder: (context, orientation) {
+    return new Center(child: OrientationBuilder(builder: (context, orientation) {
       return RefreshIndicator(
         onRefresh: refreshList,
         child: new GridView.builder(
+          padding: EdgeInsets.only(top: 15.0),
           itemCount: dergiler.length,
           gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              mainAxisSpacing: 15.0,
+              mainAxisSpacing: 20.0,
               crossAxisSpacing: 1.0,
-              childAspectRatio: 0.74),//(MediaQuery.of(context).size.height/900)-(MediaQuery.of(context).size.height/4000)),
+              childAspectRatio: 0.69),//(MediaQuery.of(context).size.height/900)-(MediaQuery.of(context).size.height/4000)),
           itemBuilder: (BuildContext context, int index) {
             return Container(
               alignment: Alignment.center,
@@ -68,13 +69,14 @@ class _DergiPageState extends State<DergiPage> {
           },
         ),
       );
-    });
+    }));
   }
 
   @override
   Widget build(BuildContext context) {
     return new Container(
-      color: Theme.Colors.pagebackground,
+      color: Colors.white
+      ,
       child: checkload(),
 //      child: OrientationBuilder(
 //        builder: (context, orientation) {

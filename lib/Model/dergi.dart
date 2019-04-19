@@ -1,16 +1,17 @@
 import './detailBar.dart';
 class Dergi {
-  final int id;
+  final String id;
   final String name;
   final String pdf;
  final String image;
+ final  like,dislike;
 //  final String seen;
   final String info;
   final List<Detail> linkler;
 
 
   const Dergi({this.id, this.name, this.pdf,
-    this.info,this.image,this.linkler});
+    this.info,this.image,this.linkler,this.like,this.dislike});
 
 
 
@@ -23,11 +24,13 @@ class Dergi {
    // print(imagesList);
 
     return Dergi(
-      id: json['id'] as int,
+      id: json['_id'] as String,
       name: json['name'] as String,
       pdf: json['pdf'] as String,
       info: json['info'] as String,
       image: json['img'] as String,
+      like: json['like'] as int,
+      dislike: json['dislike'] as int,
       linkler: imagesList,
     );
   }

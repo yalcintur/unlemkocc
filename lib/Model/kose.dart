@@ -1,117 +1,92 @@
-class Kose{
-  String title,img,content,author;
-  Kose({this.title,this.content,this.img,this.author});
-}
-class Koseler{
-
-
-  List<Kose> getlist(){
-
-      return koses;
-
-  }
-
-  List<Kose> koses = [
-    Kose(
-      title: "Kilim Desenli Metalciler: Kim lan bunlar?",
-      author: "Asya Ülger",
-      content: "asglkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj",
-      img: "https://i.ibb.co/0mRTynN/renaissance-The-School-Of-Athens-Classic-Art-Paitings-Raphael-Painter-Rafael-Philosophers-Hd-Wallpapers.png",
-    ),
-    Kose(
-      title: "Kilim Desenli Metalciler: Kim lan bunlar?",
-      author: "Asya Ülger",
-      content: "asglkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj",
-      img: "https://i.ibb.co/0mRTynN/renaissance-The-School-Of-Athens-Classic-Art-Paitings-Raphael-Painter-Rafael-Philosophers-Hd-Wallpapers.png",
-    ),
-    Kose(
-      title: "Kilim Desenli Metalciler: Kim lan bunlar?",
-      author: "Asya Ülger",
-      content: "asglkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj",
-      img: "https://i.ibb.co/0mRTynN/renaissance-The-School-Of-Athens-Classic-Art-Paitings-Raphael-Painter-Rafael-Philosophers-Hd-Wallpapers.png",
-    ),
-    Kose(
-      title: "Kilim Desenli Metalciler: Kim lan bunlar?",
-      author: "Asya Ülger",
-      content: "asglkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj",
-      img: "https://i.ibb.co/0mRTynN/renaissance-The-School-Of-Athens-Classic-Art-Paitings-Raphael-Painter-Rafael-Philosophers-Hd-Wallpapers.png",
-    ),
-  ];
-}
+import 'dart:convert';
+import 'dart:async';
+import 'package:http/http.dart' as http;
 
 class Catog{
   String title,route;
-  Catog({this.title,this.route});
+  List<Kose> koselist;
+  Catog({this.title,this.route,this.koselist});
+
+
+
+
+  factory Catog.fromJson(Map<String, dynamic> json) {
+    var list = json['koseyazilari'] as List;
+    List<Kose> Koselist = list.map((i) => Kose.fromJson(i)).toList();
+
+    //print(list.runtimeType); //returns List<dynamic>
+    // print(imagesList);
+
+    return Catog(
+      route: json['route'] as String,
+      title: json['name'] as String,
+      koselist:  Koselist,
+
+    );
+  }
+
+
+
+
 }
+
+class Kose{
+
+  var okunma,link,author,title,icerik,dislike,like;
+  Kose({this.okunma,this.link,this.author,this.title,this.icerik,this.dislike,this.like});
+
+  factory Kose.fromJson(Map<String, dynamic> json) {
+
+
+    //print(list.runtimeType); //returns List<dynamic>
+    // print(imagesList);
+
+    return Kose(
+      okunma: json['okunma'] as int,
+      title: json['title'] as String,
+      link: json['link'] as String,
+      icerik: json['icerik'] as String,
+      author: json['author'] as String,
+      like: json['like'] as int,
+      dislike: json['dislike'] as int,
+
+    );
+  }
+
+}
+class Koses{
+}
+
 class Catogs{
 
-  static List<Catog> getlist(){
-    return catogs;
+    static List<Catog> dergilist;
+
+
+  static Future<List<Catog>> getlist() async{
+    if(dergilist == null){
+      var parsedfetch = await fetchPhotos();
+      dergilist = parsedfetch;
+      return parsedfetch;
+
+    }else{
+
+      return dergilist;
+
+    }
   }
-  static List<Catog> catogs= [
-    Catog(
-      title: "trend",
-      route: "trend",
-    ),
-    Catog(
-      title: "spor",
-      route: "spor",
-    ),
-    Catog(
-      title: "felsefe",
-      route: "felsefe",
-    ),
-    Catog(
-      title: "sanat",
-      route: "sanat",
-    ),
-    Catog(
-      title: "teknoloji",
-      route: "tekno",
-    ),
-    Catog(
-      title: "trend",
-      route: "trend",
-    ),
-    Catog(
-      title: "spor",
-      route: "spor",
-    ),
-    Catog(
-      title: "felsefe",
-      route: "felsefe",
-    ),
-    Catog(
-      title: "sanat",
-      route: "sanat",
-    ),
-    Catog(
-      title: "teknoloji",
-      route: "tekno",
-    ),
-    Catog(
-      title: "trend",
-      route: "trend",
-    ),
-    Catog(
-      title: "spor",
-      route: "spor",
-    ),
-    Catog(
-      title: "felsefe",
-      route: "felsefe",
-    ),
-    Catog(
-      title: "sanat",
-      route: "sanat",
-    ),
-    Catog(
-      title: "teknoloji",
-      route: "tekno",
-    ),
 
 
-  ];
+  static List<Catog> parsePhotos(String responseBody) {
+    final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
+    print(parsed);
+    return parsed.map<Catog>((json) => Catog.fromJson(json)).toList();
+  }
+  static Future<List<Catog>> fetchPhotos() async {
+    final response = await http.get('http://31.186.23.166/konular');
+    print(response.body);
+
+    return parsePhotos(response.body);
+  }
 
 
 

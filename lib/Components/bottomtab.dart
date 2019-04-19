@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import '../Theme.dart' as Theme;
 import '../Pages/dergiPage.dart';
 import '../Pages/koseler.dart';
@@ -10,236 +11,284 @@ import '../Components/ropSayac.dart';
 
 class Bottomtab extends StatefulWidget {
   static String tag = 'home-page';
+  var startup;
+  Bottomtab({this.startup = 2});
   @override
-  _BottomState createState() => _BottomState();
-
+  _BottomState createState() => _BottomState(startup);
 }
+
 class _BottomState extends State<Bottomtab> {
-  static double heightt = 0, widthh,element1=0,element2=0,element3=0,element4=0,element5=0;
+  var startup,currentpage,BarHeight = 40.0;
+  _BottomState(this.startup);
+
+ static var startpage=2;
+  //Variables
+  static var asd= 0,margin,index=2,prev=2;
+static  Color barColor = Colors.black;
+  static double heightt = 0,widthh;
+  static double barWith = 25;
+
+  //Constants
+  final _controller = PageController(
+    initialPage: startpage,
+    keepPage: true,
+
+  );
+
+  //Functions
+
+  double IsMarginNull(BuildContext context){
+
+    if(margin != null) {
+      return margin;
+    }else return ((startup*(((MediaQuery.of(context).size.width-40)/5)+8))).toDouble();
+
+  }
+
+  void changed(){ ///Calculate the position of indicator after each change
+    print(_controller.page);
+    var EleWidth = (MediaQuery.of(context).size.width-40)/5;
+    if(index!= 0){
+      setState(() {
+        margin = ((index*(EleWidth+8))).toDouble();
+      });}else{
+      setState(() {
+        margin = ((index*EleWidth)).toDouble();
+      });
+
+    }
+  }
+  void paintBar() {
+   var TopBarHeight = 25*MediaQuery.of(context).size.height/360;
+
+    if (currentpage != null) {
+      if (currentpage == 2) {
+        if (barColor == Colors.black) {
+
+        } else {
+          setState(() {
+            barWith = 25;
+            barColor = Colors.black;
+          });
+        }
+      } else {
+        setState(() {
+          barWith = BarHeight;
+          barColor = Color.fromRGBO(244, 14, 8, 1);
+        });
+      }
+    }else{
+      if (startup == 2) {
+        if (barColor == Colors.black) {
+
+        } else {
+          setState(() {
+            barWith = 25;
+            barColor = Colors.black;
+          });
+        }
+      } else {
+        setState(() {
+          barWith = BarHeight;
+          barColor = Color.fromRGBO(244, 14, 8, 1);
+        });
+      }
+
+    }
+  }
+
+  void onTap(int a){ ///Animate the Pages after tabs
+
+      setState(() {
+        currentpage = a;
+        prev = index;
+        index = a;
+      });
+      try{
+        _controller.animateToPage(
+            a, duration: Duration(milliseconds: 400), curve: Curves.ease);
+      }catch(e){
+        print("aha hata işte bottomtab:88 $e");
+    }
+
+    }
 
 
-  void initilizeRatio(){
-    print("initilized");
-    setState(() {
-    element1 = TabAlgorithm.ratioAlgorithm(65, 65, widthh);
-    element2 = TabAlgorithm.ratioAlgorithm(40, 40, widthh);
-    element3 = TabAlgorithm.ratioAlgorithm(40, 40, widthh);
-    element4 = TabAlgorithm.ratioAlgorithm(65, 65, widthh);
-    element5 = TabAlgorithm.ratioAlgorithm(38, 31, widthh);
-    });
-    //////////////////////////////7
-    setState(() {
-      tabBar = new TabBar(
 
-        tabs: [
+  //Widgets
 
-          Tab(
-            child: new Container(
-              width: widthh,
-              height: element1,
-              alignment: Alignment.center,
-              decoration: new BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("assets/kitap@3x.png"),
-                    fit: BoxFit.fill),
-              ),
-            ),
-          ),
-          Tab(
-            icon: new Container(
-              width: widthh,
-              height: element2,
-              alignment: Alignment.center,
-              decoration: new BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("assets/mikrofon.png"),
-                    fit: BoxFit.fill),
-              ),
-            ),
-          ),
-          Tab(
-            icon: new Container(
-              width: widthh,
-              height: element3,
-              alignment: Alignment.center,
-              decoration: new BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("assets/ev.png"), fit: BoxFit.fill),
-              ),
-            ),
-          ),
-          Tab(
-            icon: new Container(
-              width: widthh,
-              height: element4,
-              alignment: Alignment.center,
-              decoration: new BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(
-                      "assets/koSEyaz@3x.png",
-                    ),
-                    fit: BoxFit.fill),
-              ),
-            ),
-          ),
-          Tab(
-              child: Image.asset(
-                "assets/sayac.png",
-                width: widthh,
-                height: element5,
+  Widget BottomTabBar(){
+    print(MediaQuery.of(context).size.width);
+
+    var EleWidth = (MediaQuery.of(context).size.width-40)/5;
+//    setState(() {
+//       BarHeight = (40*MediaQuery.of(context).size.height)/640;
+//    });
+    //print(EleWidth);
+    return new Container(
+      color: Colors.black,
+      width: MediaQuery.of(context).size.width,
+      height: BarHeight,
+      child: new Stack( children: <Widget>[
+        new Center(child: Container(
+          height: BarHeight,
+          width:MediaQuery.of(context).size.width-8,
+          child: new Row(children :<Widget> [
+
+            new AnimatedContainer(
+              margin: EdgeInsets.only(left: IsMarginNull(context)),
+              duration: Duration(milliseconds: ((index-prev).abs())*220,),
+              height: BarHeight,
+              width: EleWidth,
+              color: Color.fromRGBO( 209,0,0,1),
+
+            )]),
+        )),
+        new Row(children: <Widget>[
+          new Container(width: 4,),
+          new GestureDetector(
+              onTap: (){ onTap(0);},
+              child: new Container(
+                height: BarHeight,
+                width: EleWidth,
+                //color: Color.fromRGBO( 209,0,0,1),
+                child: new Center(child: Image.asset("assets/BottomBar1.png",height: 25)),
               )),
-        ],
-        //           labelStyle: ,
-        labelColor: Colors.white,
-        unselectedLabelColor: Colors.white,
+          new Container(width: 8,),
+          new GestureDetector(
+              onTap: (){ onTap(1);},
+              child: new Container(
+                height: BarHeight,
+                //   color: Color.fromRGBO( 209,0,0,1),
+                width: EleWidth,
+                //  color: DrawBox(1),
+                child: new Center(child: Image.asset("assets/BottomBar2.png",height: 25)),
+              )),
+          new Container(width: 8,),
+          new GestureDetector(
+              onTap: (){ onTap(2);},
+              child: new Container(
+                height: BarHeight,
+                width: EleWidth,
+                //color: Color.fromRGBO( 209,0,0,1),
+                //color: DrawBox(2),
+                child: new Center(child: Image.asset("assets/BottomBar3.png",height: 25)),
+              )),
+          new Container(width: 8,),
+          new GestureDetector(
+              onTap: (){ onTap(3);},
+              child: new Container(
+                // color: Color.fromRGBO( 209,0,0,1),
+                height: BarHeight,
+                width: EleWidth,
+                // color: DrawBox(3),
+                child: new Center(child: Image.asset("assets/BottomBar4.png",height: 25)),
+              )),
+          new Container(width: 8,),
+          new GestureDetector(
+              onTap: (){ onTap(4);},
+              child:Container(
+                height: BarHeight,
+                //color: Color.fromRGBO( 209,0,0,1),
+                width: EleWidth,
+                // color: DrawBox(4),
+                child: new Center(child: Image.asset("assets/BottomBar5.png",height: 25)),
+              )),
+          new Container(width: 4,),
 
 
-
-      );
-    });
+        ])]));
   }
 
-  static Widget tabBarLoad(){
-
-    if(heightt == 0){
-
-      return new Container();
 
 
-    }else return tabBar;
 
 
-  }
 
-  static Widget AppBarr() {
-    return new AppBar(
-      title: Center(
+  Widget CustomAppBar(BuildContext context) {
 
-        child: Image.asset(
-          "assets/unlem@3x.png",
-          width: 144.0,
-          height: 54.0,
+    return new Container(
+      width: MediaQuery.of(context).size.width,
+      child: new Column(
+      children: <Widget>[
+        new AnimatedContainer(
+          height: MediaQuery.of(context).padding.top,
+          color: barColor,
+          duration: Duration(milliseconds: 100),
         ),
-      ),
-      backgroundColor: Theme.Colors.tabbarbackground,
-    );
+        new AnimatedContainer(
+            height: barWith,
+            duration: Duration(milliseconds: 100),
+            decoration: BoxDecoration(
+                color: barColor,
+
+            ),
+
+      child: new Center(
+        child: new Image.asset("assets/unlem@3x.png"),
+      )),
+
+  ]));
   }
+
+
+  void jumpto(){
+
+    if(startup != null && startup != 2){
+
+      _controller.jumpToPage(startup);
+    }
+
+  }
+
+  //initstate
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    setState(() {
+      margin = null;
+    });
+
+    SchedulerBinding.instance.addPostFrameCallback((_) => this.jumpto());
+
+
+  }
+  //Build
 
   @override
   Widget build(BuildContext context) {
-    heightt =  MediaQuery.of(context).size.height;
-    widthh = (MediaQuery.of(context).size.width-20)/5;
-    initilizeRatio();
-    print("Boy : $heightt");
-    return new DefaultTabController(
-        length: 5,
-        child: new Scaffold(
-          appBar: AppBarr(),
-          body: new TabBarView(
-            children: [
+    paintBar();
+    //Listening Tabbar
+    _controller.addListener(changed);
+
+    return new Scaffold(
+      body: new Column(
+        children: <Widget>[
+          new Align(
+            alignment: Alignment.topCenter,
+            child: CustomAppBar(context),
+          ),
+          new Expanded(child: PageView(
+            controller: _controller,
+
+            scrollDirection: Axis.horizontal,
+            children: <Widget>[
               new DergiPage(),
               new Ropo(),
               new Home(),
               new Koseler(),
               new Timing(),
             ],
+          )),
+          new Align(
+            alignment: Alignment.bottomCenter,
+            child: BottomTabBar(),
           ),
-          bottomNavigationBar: new Container(
-            decoration: new BoxDecoration(
-              //   borderRadius: BorderRadius.all(Radius.circular(1.0)),
-              boxShadow: <BoxShadow>[
-                new BoxShadow(
-                  color: Colors.black12,
-                  blurRadius: 3.0,
-                  offset: new Offset(0.0, -5.0),
-                ),
-              ],
-            ),
-            child: tabBar,
-          ),
-          backgroundColor: Theme.Colors.tabbarbackground,
-        ),
-      );
-
+        ],
+      ),
+    );
   }
 
-  static var tabBar = new TabBar(
-
-    tabs: [
-
-      Tab(
-        
-        //child: Image.asset('assets/BottomBar1.png',scale: 1,width: 32,height: 32,),
-        
-        child: new Container(
-          width: 64.0,
-          height: 32.0,
-          alignment: Alignment.center,
-          decoration: new BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/BottomBar1.png"),
-              //  fit: BoxFit.fill,
-
-            ),
-          ),
-        ),
-      ),
-      Tab(
-        icon: new Container(
-          width: 64.0,
-          height: 64.0,
-          alignment: Alignment.center,
-          decoration: new BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/BottomBar2.png"),
-                fit: BoxFit.fill),
-          ),
-        ),
-      ),
-      Tab(
-        icon: new Container(
-          width: 64.0,
-          height: 64.0,
-          alignment: Alignment.center,
-          decoration: new BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/BottomBar3.png"), fit: BoxFit.fill),
-          ),
-        ),
-      ),
-      Tab(
-        icon: new Container(
-          width: 64.0,
-          height: 64.0,
-          alignment: Alignment.center,
-          decoration: new BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(
-                    "assets/BottomBar1.png",
-                ),
-                fit: BoxFit.fill),
-          ),
-        ),
-      ),
-      Tab(
-          child: Image.asset(
-            "assets/BottomBar1.png",
-            width: 64.0,
-            height: 64.0,
-          )),
-    ],
-    //           labelStyle: ,
-    labelColor: Colors.white,
-    unselectedLabelColor: Colors.white,
-  );
 }
-
-
-
-
-
-
-
-
-
-

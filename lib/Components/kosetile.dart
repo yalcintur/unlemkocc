@@ -1,60 +1,85 @@
 import 'package:flutter/material.dart';
+import '../Model/kose.dart';
+import '../Pages/koseDetailPage.dart';
+import '../Algorithms/dergimap.dart';
+import 'dart:ui';
 import '../Theme.dart' as Theme;
 
 class Kosetile extends StatelessWidget {
-  var imageasset, kosebaslik, koseicerik;
-  Kosetile(this.imageasset, this.kosebaslik, this.koseicerik);
+  Dimension calculatedimens(double width) {
+    double height = ((width * 249) ~/ 375).toDouble();
+    return Dimension(width, height);
+  }
+
+  Kose content;
+  int index;
+   Kose baban ;
+  Kosetile({
+  this.content = null
+
+    ,
+    this.index});
+  //Kosetile(this.imageasset, this.kosebaslik, this.koseicerik);
   @override
   Widget build(BuildContext context) {
-    return new Container(
-      margin: EdgeInsets.only(bottom: 7.0),
-      // child: new Flexible(
-      // flex: 1,
-      child: new Stack(
-        children: <Widget>[
-          new Container(
-            width: 400.0,
-            height: 165.0,
-            alignment: Alignment.center,
-            decoration: new BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(imageasset), fit: BoxFit.fill),
-            ),
-          ),
-          // new Image.asset(
-          //   imageasset,
-          //   width: 362.0,
-          //   height: 127.0,
-          // ),
-          new Column(
-            children: <Widget>[
-              new Container(
-                                alignment: Alignment(-1.0, 0.0),
+    return new Container(margin: EdgeInsets.only(left: 6.0,bottom: 8.0,right: 6.0),child: new LayoutBuilder(builder: (context, costaints) {
+      return new GestureDetector(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (_) {
+              return KoseDetail(content: content, index:  this.index);
+            }));
 
-                margin: EdgeInsets.only(top: 26.0, left: 6.0),
-                child: new Text(
-                  kosebaslik,
-                  style: Theme.TextStyles.kosebas,
-                  textAlign: TextAlign.left,
-                ),
+          },
+          child: new Container(
+        width: calculatedimens(MediaQuery.of(context).size.width-12).width,
+        height: calculatedimens(MediaQuery.of(context).size.width-12).height,
+        child: new Stack(
+          children: <Widget>[
+            new Hero(tag:"$index kose",
+            child: new Container(
+//
+//              decoration: BoxDecoration(
+//                borderRadius: BorderRadius.circular(10),//MediaQuery.of(context).size.width-16/87),
+//
+//              ),
+            //color: Colors.yellow,
+                child: new ClipRRect( borderRadius: BorderRadius.circular(10),child: new Image.network(content.link,
+                  width: calculatedimens(MediaQuery.of(context).size.width-12).width,
+                  height: calculatedimens(MediaQuery.of(context).size.width-12).height,
+                )),
+            )),
+            new Container(
+              width: calculatedimens(MediaQuery.of(context).size.width).width,
+              height: calculatedimens(MediaQuery.of(context).size.width).height,
+              child: new Column(
+                children: [
+                  new Text(
+                    content.title.toString(),
+                    style: Theme.TextStyles.KoseTitle,
+                    maxLines: 2,
+                  ),
+                  new Container(
+                    height: 5.0,
+                  ),
+                  new Container(
+                    child: new Text(
+                      content.author.toString(),
+                      style: Theme.TextStyles.koseyazar,
+                      textDirection: TextDirection.ltr,
+                    ),
+                  ),
+                ],
+                crossAxisAlignment: CrossAxisAlignment.start,
               ),
-              new SizedBox(
-                height: 10.0,
+              margin: EdgeInsets.only(
+                top: ((120 * calculatedimens(MediaQuery.of(context).size.width-12).height) / 230)
+                    .toDouble(),
+                left: 15.0,
               ),
-              new Container(
-                alignment: Alignment(-1.0, 0.0),
-                margin: EdgeInsets.only(top: 0.0, left: 10.0),
-                child: new Text(
-                  koseicerik,
-                  style: Theme.TextStyles.koseice,
-                  textAlign: TextAlign.left,
-                ),
-              ),
-            ],
-          )
-        ],
-        // ),
-      ),
-    );
+            ),
+          ],
+        ),
+      ));
+      }));
   }
 }

@@ -28,7 +28,7 @@ class Video{
       link: json['link'] as String,
       bitimg:  json['imglink'] as String,
       konname:  json['konukname'] as String,
-      konimg:  json['konukimage'] as String,
+      konimg:  json['konukimg'] as String,
       expdate: json['expireDate'] as String,
 
 

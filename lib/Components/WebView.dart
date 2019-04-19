@@ -10,31 +10,28 @@ import 'package:http/http.dart' as http;
 import '../Pages/dergidetailPage.dart';
 import '../Theme.dart' as Theme;
 
-
-
-
 class WebViewPlugin extends StatefulWidget {
   String url;
   int indexed;
-  var dergiimage,baslik;
-  WebViewPlugin(this.url,this.dergiimage,this.baslik, this.indexed);
+  var dergiimage, baslik;
+  WebViewPlugin(this.url, this.dergiimage, this.baslik, this.indexed);
 
   @override
-  WebViewState createState() => new WebViewState(url,dergiimage,baslik,indexed);
-
+  WebViewState createState() =>
+      new WebViewState(url, dergiimage, baslik, indexed);
 }
 
-
-
 class WebViewState extends State<WebViewPlugin> {
+  bool isit = true;
 
   bool shallwe;
-  String url;// = "https://www.brookfield.hants.sch.uk/subpage-content/content-pdfs/exams11/English/Modern%20Text/An%20Inspector%20Calls_text.pdf";
+  String
+      url; // = "https://www.brookfield.hants.sch.uk/subpage-content/content-pdfs/exams11/English/Modern%20Text/An%20Inspector%20Calls_text.pdf";
   int indexed;
-  var dergiimage,baslik;
-  WebViewState(this.url,this.dergiimage,this.baslik, this.indexed);
+  var dergiimage, baslik;
+  WebViewState(this.url, this.dergiimage, this.baslik, this.indexed);
 
-  double pdfwidth,pdfheight;
+  double pdfwidth, pdfheight;
   String _platformVersion = 'Unknown';
 
   @override
@@ -44,9 +41,11 @@ class WebViewState extends State<WebViewPlugin> {
     PdfViewerPlugin.close();
     setState(() {
       shallwe = false;
+      isit = false;
     });
     super.dispose();
   }
+
   @override
   initState() {
     super.initState();
@@ -54,8 +53,7 @@ class WebViewState extends State<WebViewPlugin> {
       shallwe = true;
     });
     initPlatformState();
-  //  print(url);
-
+    //  print(url);
   }
 
   Future<String> get _localPath async {
@@ -80,81 +78,85 @@ class WebViewState extends State<WebViewPlugin> {
     final file = await _localFile;
     return file.exists();
   }
+
   Future<Uint8List> fetchPost() async {
-    final response =
-    await http.get(url);
+    final response = await http.get(url);
     final responseJson = response.bodyBytes;
 
     return responseJson;
   }
 
+  Widget BackButton() {
+
+      return new Container(
+          margin: EdgeInsets.only(top: 15),
+          child: new GestureDetector(
+              onTap: () {
+                setState(() {
+                  isit = false;
+                  shallwe = false;
+                });
+                PdfViewerPlugin.close();
+//                Navigator.push(context, MaterialPageRoute(builder: (_) {
+//                  return DergiDetail(dergiimage, baslik, indexed);
+//                }));
+                Navigator.pop(context);
+              },
+                child: new Icon(
+                Icons.arrow_back_ios,
+                size: 30.0,
+                )
+          ));
+
+  }
+
   initPlatformState() async {
     String platformVersion;
     try {
-
       writeCounter(await fetchPost());
       var x = await existsFile();
       print(shallwe);
-      if(shallwe){
-        PdfViewerPlugin.getPdfViewer((await _localFile).path, 80.0, pdfwidth , pdfheight-80);
+      if (shallwe == true) {
+        PdfViewerPlugin.getPdfViewer(
+            (await _localFile).path, 80.0, pdfwidth, pdfheight - 80);
       }
-
-
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
 
-    if (!mounted)
-      return;
+    if (!mounted) return;
 
     setState(() {
-      if(shallwe){
-      _platformVersion = platformVersion;
+      if (shallwe) {
+        _platformVersion = platformVersion;
       }
     });
   }
- final keyy =GlobalKey<ScaffoldState>();
+
+  final keyy = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     pdfheight = MediaQuery.of(context).size.height;
     pdfwidth = MediaQuery.of(context).size.width;
-
     return new MaterialApp(
       home: new Scaffold(
         key: keyy,
         appBar: new AppBar(
           key: new Key("annen"),
-      title: new Stack(
-      children:[
-        new Container(margin: EdgeInsets.only(top: 15),child: new GestureDetector( onTap: (){
-
-
-          PdfViewerPlugin.close();
-//          Navigator.push(context, MaterialPageRoute(builder: (_) {
-//            return DergiDetail(dergiimage,baslik,indexed);
-//          }));
-        Navigator.pop(context);
-
-        }, child: new Icon(Icons.arrow_back_ios,size: 30.0,))),
-      Center(
-
-      child: Image.asset(
-        "assets/unlem@3x.png",
-        width: 144.0,
-        height: 54.0,
-      ),
-
-    )]),
-    backgroundColor: Theme.Colors.tabbarbackground,
-    ),
-
-
-        body: new Center(
-
+          title: new Stack(children: [
+            BackButton(),
+            Center(
+              child: Image.asset(
+                "assets/unlem@3x.png",
+                width: 144.0,
+                height: 54.0,
+              ),
+            )
+          ]),
+          backgroundColor: Theme.Colors.tabbarbackground,
         ),
+        body: new Center(),
       ),
     );
-
   }
 }
-

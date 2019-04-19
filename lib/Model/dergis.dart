@@ -6,12 +6,12 @@ class DergiDao {
   static List<Dergi> dergilist;
   static List<Dergi> parsePhotos(String responseBody) {
     final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
-
+    print(parsed);
     return parsed.map<Dergi>((json) => Dergi.fromJson(json)).toList();
   }
   static Future<List<Dergi>> fetchPhotos() async {
     final response =
-    await http.get('https://arcane-crag-49959.herokuapp.com/dergiler');
+    await http.get('http://31.186.23.166/dergiler');
     print(response.body);
 
     return parsePhotos(response.body);
@@ -33,14 +33,11 @@ class DergiDao {
 
 
   static Future<List<Dergi>> refreshList() async{
-
     var fetched = await fetchPhotos();
     dergilist = fetched;
     return fetched;
-
-
-
   }
+
   static List<Dergi> dergis;
 
   static Dergi getPlanetById(id) {

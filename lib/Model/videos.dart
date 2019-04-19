@@ -14,7 +14,7 @@ class VideoDao {
   }
   static Future<List<Video>> fetchPhotos() async {
     final response =
-    await http.get('https://arcane-crag-49959.herokuapp.com/videolar');
+    await http.get('http://31.186.23.166/expired');
     print(response.body);
 
     return parsePhotos(response.body);
@@ -49,5 +49,46 @@ class VideoDao {
     return videos
         .where((p) => p.id == id)
         .first;
+  }
+}
+
+
+
+
+class WillExpire{
+
+  static Video wexpvideo;
+
+  static Video parsePhotos(String responseBody) {
+    Map jsonresp = jsonDecode(responseBody);
+
+    Video responseObj = Video(
+      id: jsonresp['_id'],
+      title: jsonresp['name'],
+      expdate: jsonresp['expireDate'],
+    );
+
+    return responseObj;
+
+  }
+  static Future<Video> fetchPhotos() async {
+    final response =
+    await http.get('http://31.186.23.166/willexpire');
+    print(response.body);
+
+    return parsePhotos(response.body);
+  }
+  static  Future<Video> dergicallback() async{
+
+    if(wexpvideo == null){
+      var parsedfetch = await fetchPhotos();
+      wexpvideo = parsedfetch;
+      return wexpvideo;
+
+    }else{
+
+      return wexpvideo;
+
+    }
   }
 }

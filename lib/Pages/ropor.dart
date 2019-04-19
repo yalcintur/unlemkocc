@@ -4,7 +4,11 @@ import '../Components/ropSayac.dart';
 import '../Components/Stackvideostile.dart';
 import '../Model/videos.dart';
 import '../Model/video.dart';
+import '../Algorithms/dergimap.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import '../Algorithms/Cut.dart';
+import 'package:flutter_youtube/flutter_youtube.dart';
+
 
 
 
@@ -19,12 +23,27 @@ class Ropo extends StatefulWidget {
 
 class RopoState extends State<Ropo> {
   bool videomounted, expired;
-  int remday = 0, remhour = 0, remmin = 0, remsec = 0;
+  Video current = Video(
+    id: "1",
+    title: "ned",
+  );
+  int remday = 0,
+      remhour = 0,
+      remmin = 0,
+      remsec = 0;
 
   void change(bool exp) {
     setState(() {
       this.expired = exp;
     });
+  }
+
+  void playYoutubeVideo(String url) {
+    FlutterYoutube.playYoutubeVideoByUrl(
+      fullScreen: true,
+      apiKey: "<AIzaSyAfmD2cd6hDiLvXb_3EjOALmgq4yd-uSgU>",
+      videoUrl: url,
+    );
   }
 
   Widget updatetimer(int rday, rhour, rmin, rsec) {
@@ -40,7 +59,10 @@ class RopoState extends State<Ropo> {
     return Container(
       color: Colors.black,
       height: 40.0,
-      width: MediaQuery.of(context).size.width,
+      width: MediaQuery
+          .of(context)
+          .size
+          .width,
       child: new Container(
         margin: EdgeInsets.only(left: 15.0, right: 15.0),
         child: new Row(
@@ -59,15 +81,14 @@ class RopoState extends State<Ropo> {
               ),
             ),
             new Container(width: 10.0,),
-              new Center(
+            new Center(
 
-              child :new FittedBox(child: Text(
+              child: new FittedBox(child: Text(
 
                 "$remday : $remhour : $remmin : $remsec",
                 style: Theme.TextStyles.ropsayaccint,
                 //maxLines: 1,
               )),)
-
 
 
           ],
@@ -76,73 +97,21 @@ class RopoState extends State<Ropo> {
     );
   }
 
-  Widget konukyazi() {
-    // BU HAFTAKİ KONUĞUMUZ
-    return new Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        new Text(
-          "BU HAFTAKİ",
-          style: Theme.TextStyles.koseice,
-        ),
-        new Text(
-          "KONUĞUMUZ",
-          style: Theme.TextStyles.koseice,
-        ),
-      ],
-    );
-  }
-
-  Widget konuk(String ad, var img) {
-    // Yuvarlak Şeklindeki Karakter Fotoğğğğğğrafı ve Çerçevesi
-    return new Container(
-      child: new Column(
-        children: <Widget>[
-          Stack(
-            alignment: Alignment.center,
-            children: <Widget>[
-              Container(
-                width: 226.0,
-                height: 226.0,
-                decoration: new BoxDecoration(
-                    shape: BoxShape.circle, color: Theme.Colors.pagebackground),
-              ),
-              Container(
-                width: 215.0,
-                height: 215.0,
-                decoration: new BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                    image: new AssetImage(img),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          new Container(
-            height: 12.0,
-          ),
-          new Text(
-            ad,
-            style: Theme.TextStyles.kosebas,
-          ),
-        ],
-      ),
-    );
-  }
-
-
   bool loaded = false;
-  List<Video> videolar,videowaiting,videorelased,videolarwaitingfinal,videolarrelasedfinal;
+  List<Video> videolar;
+  Video timervideo;
 
 
   Future getlist() async {
     var val = await VideoDao.dergicallback();
+    var wexpval = await WillExpire.dergicallback();
+
+
     setState(() {
       loaded = true;
       videolar = val;
+      timervideo = wexpval;
     });
-    terminatesep();
   }
 
   Future refreshList() async {
@@ -179,162 +148,238 @@ class RopoState extends State<Ropo> {
   }
 
   Widget rendervideoorui() {
-    if (expired == false) {
-      return new Column(
-        children: <Widget>[
-          Container(
-            height: 8.0,
-          ),
-          konukyazi(),
-          Container(
-            height: 60.0,
-          ),
-          konuk("Ayşe Alan", "assets/ayseAlan.png"),
-        ],
+    if (current != null) {
+      return Container(
+        color: Colors.white,
+        child: new Stack(
+          children: <Widget>[
+            new Container(
+              child: new Column(
+                children: <Widget>[
+                  RopSayac(this),
+                  new Expanded(
+                      child: new SingleChildScrollView(
+                        child: new Column(children: <Widget>[
+
+
+                          thisweek(),
+                          videoList(),
+
+
+                        ],),
+                      )
+
+                  ),
+                ],
+              ),
+            ),
+
+            //new Image.asset("name"),
+          ],
+        ),
       );
     } else {
-      return new Text("Video Geldi :D");
+      return new Container(
+        color: Colors.white,
+        child: new Stack(
+          children: <Widget>[
+            new Container(
+              child: new Column(
+                children: <Widget>[
+                  RopSayac(this),
+                  new Expanded(
+                      child: new SingleChildScrollView(
+                        child: new Column(children: <Widget>[
+                          unknownWeek(),
+                          videoList(),
+                        ],),
+                      )
+
+                  ),
+                ],
+              ),
+            ),
+
+            //new Image.asset("name"),
+          ],
+        ),
+      );
       // return video
     }
   }
-  void terminatesep(){
-    var _now = DateTime.now();
-    var endpointparsed;
-
-    for(int i = 0;i < videolar.length;i++){
-      print(videolar[i]);
-      Video vvv =videolar[i];
-      var vidi = new Video(id:vvv.id,desc:vvv.desc,link:vvv.link,bitimg:vvv.bitimg,konimg:vvv.konimg,konname:vvv.konname,expdate:vvv.expdate);
-      videowaiting.add(vidi);
-      /*
-      endpointparsed =DateTime.parse(videolar[i].expdate);
-      if(_now.isBefore(endpointparsed) == true){
-        Video asd = videolar[i];
-
-        videowaiting.add(asd);
-
-      }else{
-
-        Video asd = videolar[i];
-        videorelased.add(asd);
-      }
-
-      videowaiting.sort((a, b) => calculateremaining(a.expdate).compareTo(calculateremaining(b.expdate)));
-      print(videowaiting);
-      setState(() {
-        videolarwaitingfinal = videowaiting;
-        videolarrelasedfinal = videorelased;
-      });
-*/
-    }
-
-
-  }
-  static int calculateremaining(var endpointparsed){
-    var noww = DateTime.now();
-
-    return noww.difference(endpointparsed).inSeconds;
-  }
-  Widget stackvideos() {
-    return new Container(
-      decoration: new BoxDecoration(
-        color: Theme.Colors.tabbarbackground,
-        borderRadius: BorderRadius.all(Radius.circular(8.0)),
-      ),
-      margin: EdgeInsets.only(top: 40.0, bottom: 10.0),
-      width: 358.0,
-      height: 343.0,
-      child: Column(
-        children: <Widget>[
-          Container(
-            // Üstteki bar
-            width: 358.0,
-            height: 46.0,
-            decoration: new BoxDecoration(
-              color: Theme.Colors.stackvideostopbar,
-              borderRadius: BorderRadius.all(Radius.circular(8.0)),
-              boxShadow: <BoxShadow>[
-                new BoxShadow(
-                  color: Colors.black12,
-                  blurRadius: 3.0,
-                  offset: new Offset(0.0, 7.0),
-                ),
-              ],
-            ),
-
-            child: Center(
-              child: new Text(
-                "BENCE Bİ’ ÖNCEKİLERE DE GÖZ AT",
-                style: Theme.TextStyles.stackvideotitle,
-              ),
-            ),
-          ), //üstteki bar bitti
-          videoList(),
-        ],
-      ),
-    );
-  }
 
   Widget videoList() {
-    if(loaded != false){
+    if (loaded != false) {
+      var andn = videolar.map((obj) =>
+          VideoTile(1, obj.title, obj.link, RopoAlg
+              .calculatebox(context)
+              .height)).toList();
       return new Container(
-        margin: EdgeInsets.only(top: 8.0,left: 4.0,right: 4.0),
-        height: 285,
-        child: new ListView.builder(
-            itemCount: videolar.length,
-            itemBuilder: (BuildContext ctxt, int index) {
-              return VideoTile(index,videolar[index].title,videolar[index].link);
-            }),
+        // height: videolar.length*(((140.0*(RopoAlg.calculatebox(context).height))/358)-50)+20,
+          margin: EdgeInsets.only(top: 8.0, left: 4.0, right: 4.0),
+          child: new Column(children: andn)
       );
-    }else{
+    } else {
       return Text("loading");
     }
-
   }
+
+  Widget thisweek() {
+    if (loaded != false) {
+      return new Container(
+          child: new Column(children: <Widget>[
+            new Stack(children: <Widget>[
+              new GestureDetector(
+
+                child: new Container(
+                    width: MediaQuery
+                        .of(context)
+                        .size
+                        .width,
+                    // height: 200,//400,//375/(400/MediaQuery.of(context).size.width),
+                    child: new ClipPath(
+                      child: new Image.network(videolar[0].konimg),
+                      clipper: RopoClip(),
+                    )),
+
+              ),
+              new Align(
+                  alignment: Alignment.center,
+                  child: new GestureDetector(
+                      onTap: () {
+
+    if (videolar[0].link != null) {
+    playYoutubeVideo(videolar[0].link);
+    //print(linkk);
+    }
+
+                      },
+                      child: new Container(
+
+
+                        child: new Center(child: new Icon(
+                          Icons.play_arrow,
+                          color: Color.fromRGBO(244, 14, 8, 0.66),
+                          size: 35,)),
+
+
+                        margin: EdgeInsets.only(top: ((400 * MediaQuery
+                            .of(context)
+                            .size
+                            .width) / 375) - 45),
+                        width: 90.0,
+                        height: 90.0,
+                        decoration: new BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(45),
+                          boxShadow: [
+                            new BoxShadow(
+                              color: Color.fromRGBO(175, 175, 175, 0.9),
+                              blurRadius: 5,
+                              offset: new Offset(0.0, 8.0),
+                            )
+                          ],
+                        ),))),
+            ],), //Button ve image
+            new Container(height: 16.0),
+            new Text(videolar[0].konname, style: TextStyle(fontSize: 40,
+                fontFamily: "DINCondensedBold",
+                color: Colors.black),),
+            new Text("Müdür Yardımcısı", style: TextStyle(fontSize: 18,
+                fontFamily: "DINCondensedBold",
+                color: Color.fromRGBO(176, 176, 176, 1)),),
+
+          ]));
+    } else
+      return new Container(child: new Text("loading"),);
+  }
+
+  Widget unknownWeek() {
+    var atmisucstayla = TextStyle(fontSize: 18,
+        fontFamily: "DINCondensedBold",
+        color: Color.fromRGBO(176, 176, 176, 1));
+    return new Container(
+        child: new Column(children: <Widget>[
+          new Stack(children: <Widget>[
+            new GestureDetector(
+
+              child: new Container(
+                  width: MediaQuery
+                      .of(context)
+                      .size
+                      .width,
+                  // height: 200,//400,//375/(400/MediaQuery.of(context).size.width),
+                  child: new ClipPath(
+                    child: new Image.asset("assets/qmark.jpg"),
+                    clipper: RopoClip(),
+                  )),
+              onTap: () {
+                if (current != null) {
+                  playYoutubeVideo(current.link);
+                }
+              },
+            ),
+            new Align(
+                alignment: Alignment.center,
+                child: new Container(
+
+
+                  child: new Center(child: new Icon(
+                    Icons.mood_bad, color: Color.fromRGBO(244, 14, 8, 0.66),
+                    size: 30.0,)),
+
+
+                  margin: EdgeInsets.only(top: ((400 * MediaQuery
+                      .of(context)
+                      .size
+                      .width) / 375) - 45),
+                  width: 90.0,
+                  height: 90.0,
+                  decoration: new BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(45),
+                    boxShadow: [
+                      new BoxShadow(
+                        color: Color.fromRGBO(175, 175, 175, 0.9),
+                        blurRadius: 5,
+                        offset: new Offset(0.0, 8.0),
+                      )
+                    ],
+                  ),)),
+          ],), //Button ve image
+          new Container(height: 16.0),
+          new FittedBox(
+              child: new Text(
+                "Ufukta Bir Video Gözükmemekte", style: TextStyle(
+                  fontSize: 40,
+                  fontFamily: "DINCondensedBold",
+                  color: Colors.black),)),
+          new FittedBox(child: Text(
+              "Video ekibi ÖB pizzası yemeye dalmıs olabilir."
+              , style: atmisucstayla)),
+          new FittedBox(child: Text(
+              "Elif Hoca hepimizi disipline vermis olabilir"
+              , style: atmisucstayla)),
+          new FittedBox(child: Text(
+              "Sınavlar baslamıs ve dusta aglıyor olabiliriz"
+              , style: atmisucstayla)),
+          new FittedBox(child: Text(
+              "Uygulamayı satıp meksikaya kacmıs olabiliriz"
+              , style: atmisucstayla)),
+        ]));
+  }
+
 
   List<String> lists = ["asdas", "adadsa"];
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Theme.Colors.pagebackground,
-      child: new Stack(
-        children: <Widget>[
-          new Container(
-            margin: EdgeInsets.only(left: 0.0, top: 37.0),
-            child: Image.asset(
-              "assets/k@3x.png",
-              // fit: BoxFit.fill,
-            ),
-          ),
-          new Container(
-            child: new Column(
-              children: <Widget>[
-                RopSayac(this),
-                new Expanded(
-                  child: CustomScrollView(
-                    slivers: <Widget>[
-                      SliverToBoxAdapter(
-                        child: new Column(
-                          children: <Widget>[
-                            rendervideoorui(),
-                            new Container(
-                              height: 40.0,
-                            ),
-                            stackvideos(),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
+    //   print(MediaQuery.of(context).size.width);
 
-          //new Image.asset("name"),
-        ],
-      ),
+    return Container(
+        color: Colors.white,
+        child: rendervideoorui()
     );
   }
 }
+
