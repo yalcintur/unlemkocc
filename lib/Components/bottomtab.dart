@@ -139,7 +139,7 @@ static  Color barColor = Colors.black;
 
             new AnimatedContainer(
               margin: EdgeInsets.only(left: IsMarginNull(context)),
-              duration: Duration(milliseconds: ((index-prev).abs())*220,),
+              duration: Duration(milliseconds: ((index-prev).abs())*100,),
               height: BarHeight,
               width: EleWidth,
               color: Color.fromRGBO( 209,0,0,1),
