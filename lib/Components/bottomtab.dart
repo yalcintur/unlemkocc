@@ -46,7 +46,7 @@ static  Color barColor = Colors.black;
   }
 
   void changed(){ ///Calculate the position of indicator after each change
-    print(_controller.page);
+    //print(_controller.page);
     var EleWidth = (MediaQuery.of(context).size.width-40)/5;
     if(index!= 0){
       setState(() {
@@ -105,8 +105,10 @@ static  Color barColor = Colors.black;
         index = a;
       });
       try{
+        if(_controller.hasClients){
         _controller.animateToPage(
             a, duration: Duration(milliseconds: 400), curve: Curves.ease);
+        }
       }catch(e){
         print("aha hata işte bottomtab:88 $e");
     }
