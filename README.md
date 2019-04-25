@@ -1,8 +1,8 @@
-# aurorav10
+# Unlem Mobile App
 
-A new Flutter project.
+Unlem App is an interactive media app for high-school students. Our team aimed to spread the atmosphere of free-thought and productivity through publishing magazines and articles in Unlem. 
 
-## Getting Started
-
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+Unlem Developer Team:
+Mobile Developer: İsa Türk
+UI/UX Designer: Asya Ülger
+Backend Developer: Yalçın Tür
