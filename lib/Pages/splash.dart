@@ -7,7 +7,10 @@ import '../Model/carousel.dart';
 import '../Model/dergis.dart';
 import '../Model/kose.dart';
 import '../Model/videos.dart';
-import '../Model/timers.dart';
+import './Login.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../Model/userStats.dart';
+
 
 
 
@@ -42,6 +45,32 @@ class _SplashState extends State<Splash> {
     });
     IsLoaded();
   }
+
+
+  isLoggedIn() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    print(prefs.getBool("loginStatus")== true);
+    if(prefs.getBool("loginStatus")== true){
+      UserStatus.setUser(prefs.getString("userEmail"), prefs.getString("userPassword"));
+      print(prefs.getBool("loginStatus"));
+      getTimer();
+      getCatog();
+      getlist();
+      getCaro();
+      getVideolist();
+    }else{
+
+      Navigator.push(context, MaterialPageRoute(builder: (_) {
+        return Login();
+      }));
+
+
+    }
+    print(prefs.getBool("loginStatus"));
+
+
+  }
+
   Future getVideolist() async {
     print("started");
     var val = await VideoDao.dergicallback();
@@ -80,7 +109,6 @@ class _SplashState extends State<Splash> {
     Navigator.push(context, MaterialPageRoute(builder: (_) {
       return Bottomtab();
     }));}
-
   }
 
 
@@ -89,21 +117,41 @@ class _SplashState extends State<Splash> {
     // TODO: implement initState
     super.initState();
 
-    getTimer();
-    getCatog();
-    getlist();
-    getCaro();
-    getVideolist();
+    isLoggedIn();
 
   }
 
   @override
   Widget build(BuildContext context) {
+    double logoWidth = MediaQuery.of(context).size.width/2.3;
+    double logoHeight = logoWidth;
     return Scaffold(
       body: new Container(
         color: Colors.white,
         child: Center(
-          child: PrgsIndicator(),
+          child:  new Stack(
+            children: <Widget>[
+              Center(
+                child: new Container(
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(244,14,8,1
+
+                    ),
+                    borderRadius: BorderRadius.circular(logoWidth/2),
+                  ),
+                  width: logoWidth,
+                  height: logoHeight,
+                ),
+              ),
+              Center(
+                child: new Image.asset(
+                  'assets/logo@3x.png',
+                  width: logoWidth,
+                  height: logoHeight ,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

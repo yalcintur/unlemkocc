@@ -3,12 +3,35 @@ import '../Theme.dart' as Theme;
 import '../Model/dergi.dart';
 import '../Pages/dergidetailPage.dart';
 import '../Algorithms/dergimap.dart';
+import 'dart:async';
 import '../Algorithms/httpPost.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 
 class Dergielemet extends StatelessWidget {
   Dergi dergi;
   int indexed;
   Dergielemet(this.dergi, this.indexed);
+
+  Future Likeit(var ids)async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    var iddergi = dergi.id;
+    if(prefs.getBool("$iddergi lk")== null ||prefs.getBool("$iddergi lk")== false ){
+      DergiHttp.PutLike(1,ids);
+
+    }
+
+  }
+  Future dLikeit(var ids)async{
+    var iddergi = dergi.id;
+
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    if(prefs.getBool("$iddergi dlk")== null ||prefs.getBool("$iddergi dlk")== false ){
+      DergiHttp.PutDisLike(1,ids);
+
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -74,9 +97,12 @@ class Dergielemet extends StatelessWidget {
 //            children: <Widget>[
             new GestureDetector(
                 onTap: () {
+
                   var ids = dergi.id;
+
                   print("Liked $ids");
-                  DergiHttp.PutLike(1,ids);
+
+                 Likeit(ids);
                 },
                 child: new Container(
                   width: (30*DergiGraph.elementDimens(context)[0])/163 ,
@@ -142,7 +168,8 @@ class Dergielemet extends StatelessWidget {
                     onTap: () {
                       var ids = dergi.id;
                       print("Disliked $ids");
-                      DergiHttp.PutDisLike(1,ids);
+
+                      dLikeit(ids);
                     },
                     child: new Container(
                       width: (30*DergiGraph.elementDimens(context)[0])/163,

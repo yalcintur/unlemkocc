@@ -83,15 +83,15 @@ class _KoselerState extends State<Koseler> {
 
    List<Kose> getPlanetById(var route) {
 
-      print("sssssssssssssssssssssssssssssssssssssssssssssssssssss $route");
-      print(catoglist.toList()[0].route);
+     //print("sssssssssssssssssssssssssssssssssssssssssssssssssssss $route");
+      //print(catoglist.toList()[0].route);
 
       if(catoglist != []) {
         var a = catoglist
             .where((p) => p.route == route)
             .first;
         if(a!= null){
-          print(a.koselist[0].title);
+        //  print(a.koselist[0].title);
           return a.koselist;
 
         }else return [];

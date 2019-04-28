@@ -55,6 +55,12 @@ class HomeState extends State<Home> {
     getTimer();
   }
   @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+
+  }
+  @override
   Widget build(BuildContext context) {
     return Container(
       color: Theme.Colors.pagebackground,
@@ -66,7 +72,10 @@ class HomeState extends State<Home> {
 //            child: new SizedBox(
 //              height: MediaQuery.of(context).size.height-65-MediaQuery.of(context).padding.top,//HomeAlgorithm.Crousel(context).height.toDouble(),
 //              width: MediaQuery.of(context).size.width,//HomeAlgorithm.Crousel(context).width.toDouble(),
-          loaded ? CaroU() : Container(child: new Text("loading"),)
+          loaded ?
+
+          CaroU()
+              : Container(child: new Text("loading"),)
         ],
       ),
 

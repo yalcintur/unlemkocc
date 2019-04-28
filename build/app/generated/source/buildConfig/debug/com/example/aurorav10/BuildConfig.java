@@ -5,7 +5,7 @@ package com.example.aurorav10;
 
 public final class BuildConfig {
   public static final boolean DEBUG = Boolean.parseBoolean("true");
-  public static final String APPLICATION_ID = "com.example.aurorav10";
+  public static final String APPLICATION_ID = "com.unlem";
   public static final String BUILD_TYPE = "debug";
   public static final String FLAVOR = "";
   public static final int VERSION_CODE = 1;

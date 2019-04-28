@@ -56,40 +56,40 @@ class DetailTile extends StatelessWidget {
                 style: Theme.TextStyles.detailpagetiletitle,
               )),
               ],),
-
-              new Container(
-                  child: new Row(
-                    children: <Widget>[
-                      new GestureDetector(
-                          onTap: (){
-                            print("Liked $id");
-                          },
-                          child: new Container(child:new Column(
-
-                        children: <Widget>[
-                          new Container(height: 4,),
-                        new Icon(Icons.thumb_up,size: 20,color: Colors.white,),
-                          new Container(height: 2,),
-
-                          new Text("12",style: TextStyle(fontSize: 10.0,color: Colors.white)),
-                      ],))),
-                      new Container(width: 10.0,),
-
-                      new GestureDetector(
-                          onTap: (){
-                            print("Disliked $id");
-                          },
-                          child: new Container(child:new Column(children: <Widget>[
-                        new Container(height: 4,),
-                        new Icon(Icons.thumb_down,size: 20,color: Colors.white,),
-                        new Container(height: 2,),
-                        new Text("12",style: TextStyle(fontSize: 10.0,color: Colors.white),),
-                      ],))),
-                      new Container(width: 25.0,)
-                    ],
-                  ),
-
-              ),
+//
+//              new Container(
+//                  child: new Row(
+//                    children: <Widget>[
+//                      new GestureDetector(
+//                          onTap: (){
+//                            print("Liked $id");
+//                          },
+//                          child: new Container(child:new Column(
+//
+//                        children: <Widget>[
+//                          new Container(height: 4,),
+//                        new Icon(Icons.thumb_up,size: 20,color: Colors.white,),
+//                          new Container(height: 2,),
+//
+//                          new Text("12",style: TextStyle(fontSize: 10.0,color: Colors.white)),
+//                      ],))),
+//                      new Container(width: 10.0,),
+//
+//                      new GestureDetector(
+//                          onTap: (){
+//                            print("Disliked $id");
+//                          },
+//                          child: new Container(child:new Column(children: <Widget>[
+//                        new Container(height: 4,),
+//                        new Icon(Icons.thumb_down,size: 20,color: Colors.white,),
+//                        new Container(height: 2,),
+//                        new Text("12",style: TextStyle(fontSize: 10.0,color: Colors.white),),
+//                      ],))),
+//                      new Container(width: 25.0,)
+//                    ],
+//                  ),
+//
+//              ),
             ],
           ),
         ),

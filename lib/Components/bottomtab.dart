@@ -23,7 +23,8 @@ class _BottomState extends State<Bottomtab> {
 
  static var startpage=2;
   //Variables
-  static var asd= 0,margin,index=2,prev=2;
+  static var asd= 0,margin,index=2,prev=2,intprev = 2,road=0.0;
+
 static  Color barColor = Colors.black;
   static double heightt = 0,widthh;
   static double barWith = 25;
@@ -47,14 +48,47 @@ static  Color barColor = Colors.black;
 
   void changed(){ ///Calculate the position of indicator after each change
     //print(_controller.page);
+
+
+//    if(_controller.hasClients){
+
+//      if(index == intprev){
+//      if(_controller.page> index){
+//        if(road<200){
+//          setState(() {
+//            index++;
+//          });}
+//
+//      }else{
+//        if(_controller.page< index){
+//          if(road < 200){
+//            setState(() {
+//              index--;
+//            });}
+//
+//        }
+//      }}
+//      if(_controller.page == index ||  (index - _controller.page).abs() < 0.0002){
+//        print(index);
+//        if(road < 200){
+//        print("pressurized");
+//          road = 0;
+//          intprev = index;
+//      }}else{
+//        road += _controller.page;
+//        //print(road);
+//
+//    }}
     var EleWidth = (MediaQuery.of(context).size.width-40)/5;
     if(index!= 0){
       setState(() {
-        margin = ((index*(EleWidth+8))).toDouble();
+        if(margin != ((index*(EleWidth+8))).toDouble()){
+        margin = ((index*(EleWidth+8))).toDouble();}
       });}else{
       setState(() {
-        margin = ((index*EleWidth)).toDouble();
-      });
+        if(margin != ((index * EleWidth)).toDouble()) {
+          margin = ((index * EleWidth)).toDouble();
+        }});
 
     }
   }
@@ -120,7 +154,7 @@ static  Color barColor = Colors.black;
   //Widgets
 
   Widget BottomTabBar(){
-    print(MediaQuery.of(context).size.width);
+    //print(MediaQuery.of(context).size.width);
 
     var EleWidth = (MediaQuery.of(context).size.width-40)/5;
 //    setState(() {
@@ -150,7 +184,7 @@ static  Color barColor = Colors.black;
           new Container(width: 4,),
           new GestureDetector(
               onTap: (){ onTap(0);},
-              child: new Container(
+              child: new SizedBox(
                 height: BarHeight,
                 width: EleWidth,
                 //color: Color.fromRGBO( 209,0,0,1),
@@ -159,7 +193,7 @@ static  Color barColor = Colors.black;
           new Container(width: 8,),
           new GestureDetector(
               onTap: (){ onTap(1);},
-              child: new Container(
+              child: new SizedBox(
                 height: BarHeight,
                 //   color: Color.fromRGBO( 209,0,0,1),
                 width: EleWidth,
@@ -169,7 +203,7 @@ static  Color barColor = Colors.black;
           new Container(width: 8,),
           new GestureDetector(
               onTap: (){ onTap(2);},
-              child: new Container(
+              child: new SizedBox(
                 height: BarHeight,
                 width: EleWidth,
                 //color: Color.fromRGBO( 209,0,0,1),
@@ -179,8 +213,8 @@ static  Color barColor = Colors.black;
           new Container(width: 8,),
           new GestureDetector(
               onTap: (){ onTap(3);},
-              child: new Container(
-                // color: Color.fromRGBO( 209,0,0,1),
+              child: new SizedBox(
+                // color: Color.fromRGBO(   209,0,0,1),
                 height: BarHeight,
                 width: EleWidth,
                 // color: DrawBox(3),

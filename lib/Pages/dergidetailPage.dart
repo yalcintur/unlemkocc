@@ -32,6 +32,7 @@ class _DergiDetailState extends State<DergiDetail> {
   }
 
   Future getlist() async {
+
     var val = await DetailBars.callback(indexed);
     setState(() {
       details = val;
