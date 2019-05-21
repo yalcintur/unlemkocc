@@ -83,11 +83,12 @@ class LoginState extends State<Login> {
     });
   }
 
-  setLocalUser(var email, var password) async {
+  setLocalUser(var email, var password,BuildContext context) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setString("userEmail", email);
     await prefs.setString("userPassword", password);
     await prefs.setBool("loginStatus", true);
+    navigateScreen(context);
 
   }
 
@@ -139,8 +140,7 @@ class LoginState extends State<Login> {
     var response =  await LoginHttp.QueryData(_emailcont.text, _passcont.text);
 
     if(response == 200){
-        setLocalUser(_emailcont.text, _passcont.text);
-        navigateScreen(context);
+        setLocalUser(_emailcont.text, _passcont.text,context);
     }else if(response == 500) {
       mScaffoldState.currentState.showSnackBar(snackBar500);
 

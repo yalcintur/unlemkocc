@@ -60,6 +60,7 @@ class WillExpire{
   static Video wexpvideo;
 
   static Video parsePhotos(String responseBody) {
+    try{
     Map jsonresp = jsonDecode(responseBody);
 
     Video responseObj = Video(
@@ -68,7 +69,10 @@ class WillExpire{
       expdate: jsonresp['expireDate'],
     );
 
-    return responseObj;
+    return responseObj;}catch(e){
+      print("Video parse failed");
+
+    }
 
   }
   static Future<Video> fetchPhotos() async {

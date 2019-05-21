@@ -25,9 +25,14 @@ class Carousells{
   static List<Carousell> carolist;
 
   static List<Carousell> parsePhotos(String responseBody) {
-    final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
-    print(parsed);
-    return parsed.map<Carousell>((json) => Carousell.fromJson(json)).toList();
+    try {
+      final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
+      print(parsed);
+      return parsed.map<Carousell>((json) => Carousell.fromJson(json)).toList();
+    }catch(e){
+      print("Carousel parse failed");
+      return [].toList();
+    }
   }
   static Future<List<Carousell>> fetchPhotos() async {
     final response =

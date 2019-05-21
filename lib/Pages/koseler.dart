@@ -44,7 +44,14 @@ class _KoselerState extends State<Koseler> {
       child: new GestureDetector(
         onTap: (){
           var durationnn = (KoselerAlgorithm.calculateposition(itemSize,_controller.offset, position,)-_controller.offset).abs().toInt()/1.5;
-          _controller.animateTo(KoselerAlgorithm.calculateposition(itemSize,_controller.offset, position,),curve: Curves.linear,duration: Duration(milliseconds: durationnn.toInt()));
+          try{
+            _controller.animateTo(KoselerAlgorithm.calculateposition(itemSize,_controller.offset, position,),curve: Curves.linear,duration: Duration(milliseconds: durationnn.toInt()));
+            _pageController.animateToPage(position, duration: Duration(milliseconds: durationnn.toInt()),curve: Curves.linear);
+          }catch(e){
+            _pageController.animateToPage(position, duration: Duration(milliseconds: 200),curve: Curves.linear);
+          }
+
+        print("asd");
           setState(() {
             catagoria = route; //Hangi Sayfa Renderlanıcak
             ElementPosition = position;
@@ -72,11 +79,57 @@ class _KoselerState extends State<Koseler> {
 
   }
 
+  PageController _pageController;
+    var pre;
+    void _listener(){
+      var anin= _pageController.page.round();
+      double itemSize = catoglist[anin].title.length*12.0;
+      if(ElementPosition != anin && anin != pre){
+        var durationnn = (KoselerAlgorithm.calculateposition(itemSize,_controller.offset, anin,)-_controller.offset).abs().toInt()/1.5;
+          _controller.animateTo(KoselerAlgorithm.calculateposition(itemSize,_controller.offset, anin,),curve: Curves.linear,duration: Duration(milliseconds: durationnn.toInt()));
+
+        setState(() {
+          ElementPosition = anin;
+        });
+      }else pre= anin;
+    }
+
+  Widget PageV(){
+
+      return new Expanded(
+        child: PageView(
+          controller: _pageController,
+          children:catoglist.map((list) => Lister(list)).toList() ,
+        ),
+      );
+
+
+  }
+  Widget Lister(var list){
+      return  new Container(child: ListView.builder(
+          padding: EdgeInsets.only(top: 0),
+    controller: _listControl,
+    itemCount: list.koselist.length,
+    itemBuilder: (context, position) {
+    return new Kosetile( content:  list.koselist[position], index: position,);
+    }
+    ));
+      
+  }
+
+
+
+
+
+
+
+
 
 @override
   void initState() {
     // TODO: implement initState
-    super.initState();
+  _pageController = new PageController()..addListener(_listener);
+  super.initState();
     getCatog();
 
   }
@@ -127,20 +180,13 @@ Widget checkload(){
         child: new Column(
           children: <Widget>[
             navBar, // Navbar
-            new Expanded(
-                child:  ListView.builder(
-                    padding: EdgeInsets.only(top: 0),
-                    controller: _listControl,
-                    itemCount: getPlanetById(catagoria).length,
-                    itemBuilder: (context, position) {
-                      return new Kosetile( content:  getPlanetById(catagoria)[position], index: position,);
-                    }
-                )),
+            PageV(),
           ],
         ),
       );
     }else return Container(child : Text("loading"));
     }
+
     }
 
 

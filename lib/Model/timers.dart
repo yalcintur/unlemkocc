@@ -27,9 +27,13 @@ class Timers{
 
   static List<Timerrr> Timerrrlist;
   static List<Timerrr> parsePhotos(String responseBody) {
-    final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
-    print(parsed);
-    return parsed.map<Timerrr>((json) => Timerrr.fromJson(json)).toList();
+    try {
+      final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
+      print(parsed);
+      return parsed.map<Timerrr>((json) => Timerrr.fromJson(json)).toList();
+    }catch(e){
+      print("Timer parse failed");
+    }
   }
   static Future<List<Timerrr>> fetchPhotos() async {
     final response =

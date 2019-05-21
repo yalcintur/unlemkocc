@@ -5,9 +5,14 @@ import 'dart:async';
 class DergiDao {
   static List<Dergi> dergilist;
   static List<Dergi> parsePhotos(String responseBody) {
-    final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
-    print(parsed);
-    return parsed.map<Dergi>((json) => Dergi.fromJson(json)).toList();
+    try {
+      final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
+      print(parsed);
+      return parsed.map<Dergi>((json) => Dergi.fromJson(json)).toList();
+    }catch(e){
+      print("Dergi parse failed");
+      return [].toList();
+    }
   }
   static Future<List<Dergi>> fetchPhotos() async {
     final response =

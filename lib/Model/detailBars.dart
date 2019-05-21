@@ -28,9 +28,13 @@ class DetailBars {
   ];
 
   static List<Detail> parsePhotos(String responseBody) {
-    final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
+    try {
+      final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
 
-    return parsed.map<Detail>((json) => Detail.fromJson(json)).toList();
+      return parsed.map<Detail>((json) => Detail.fromJson(json)).toList();
+    }catch(e){
+      print("DergiDetail parse failed");
+    }
   }
 
   static Future<List<Detail>> callback(int index) async{

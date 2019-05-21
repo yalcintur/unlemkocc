@@ -285,10 +285,6 @@ class RopoState extends State<Ropo> {
             new Text(videolar[0].konname, style: TextStyle(fontSize: 40,
                 fontFamily: "DINCondensedBold",
                 color: Colors.black),),
-            new Text("Müdür Yardımcısı", style: TextStyle(fontSize: 18,
-                fontFamily: "DINCondensedBold",
-                color: Color.fromRGBO(176, 176, 176, 1)),),
-
           ]));
     } else
       return new Container(child: new Text("loading"),);

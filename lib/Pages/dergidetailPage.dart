@@ -50,10 +50,16 @@ class _DergiDetailState extends State<DergiDetail> {
   }
 
 
-
+  bool ask(var a){
+    print("askresault $a");
+    if(a == null){
+      return false;
+    } else return true;
+  }
   Widget _isloaded(){
     double Elewidth = (253* MediaQuery.of(context).size.width)/375;
     double Eleheight = (Elewidth*351)/253;
+    final imggg = Image.network(dergiimage);
 
     if(loaded == true){
       return new Scaffold(
@@ -104,9 +110,9 @@ class _DergiDetailState extends State<DergiDetail> {
 
               new Container(
                 margin: EdgeInsets.all(4),
-                height: Eleheight-8,
+               // height: Eleheight-8,
                 width: Elewidth-8,
-                child: Image.network(dergiimage),
+                child: imggg,
                 //color: Colors.white,
               ),
 
@@ -123,7 +129,7 @@ class _DergiDetailState extends State<DergiDetail> {
                       child: new Center(
                         child: new Text(content.like.toString(),style: TextStyle(fontSize: 18,color: Color.fromRGBO(29,183,0,1),fontFamily: "DINCondensedBold"),),
                       ),
-                      decoration: BoxDecoration(
+                        decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(21),
                         color: Colors.white,
                         boxShadow: [

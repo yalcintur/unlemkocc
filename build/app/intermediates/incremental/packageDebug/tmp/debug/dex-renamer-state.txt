@@ -1,4 +1,4 @@
-#Sun Apr 28 16:46:56 EET 2019
+#Tue May 21 19:51:40 EET 2019
 base.0=D\:\\Desktop\\WorkZone\\FlutterWorkplace\\unlemkocc\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

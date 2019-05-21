@@ -77,9 +77,15 @@ class Catogs{
 
 
   static List<Catog> parsePhotos(String responseBody) {
-    final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
-    print(parsed);
-    return parsed.map<Catog>((json) => Catog.fromJson(json)).toList();
+
+    try {
+      final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
+      print(parsed);
+      return parsed.map<Catog>((json) => Catog.fromJson(json)).toList();
+    }catch(e){
+      print("kose parse failed");
+      return [].toList();
+    }
   }
   static Future<List<Catog>> fetchPhotos() async {
     final response = await http.get('http://31.186.23.166/konular');

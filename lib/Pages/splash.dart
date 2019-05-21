@@ -48,27 +48,29 @@ class _SplashState extends State<Splash> {
 
 
   isLoggedIn() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    print(prefs.getBool("loginStatus")== true);
-    if(prefs.getBool("loginStatus")== true){
-      UserStatus.setUser(prefs.getString("userEmail"), prefs.getString("userPassword"));
+    try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      print(prefs.getBool("loginStatus") == true);
+      if (prefs.getBool("loginStatus") == true) {
+        UserStatus.setUser(
+            prefs.getString("userEmail"), prefs.getString("userPassword"));
+        print(prefs.getBool("loginStatus"));
+        getTimer();
+        getCatog();
+        getlist();
+        getCaro();
+        getVideolist();
+      } else {
+        Navigator.push(context, MaterialPageRoute(builder: (_) {
+          return Login();
+        }));
+      }
       print(prefs.getBool("loginStatus"));
-      getTimer();
-      getCatog();
-      getlist();
-      getCaro();
-      getVideolist();
-    }else{
-
-      Navigator.push(context, MaterialPageRoute(builder: (_) {
-        return Login();
-      }));
+    }catch(e){
+      print("autoLogin auth failed");
 
 
     }
-    print(prefs.getBool("loginStatus"));
-
-
   }
 
   Future getVideolist() async {

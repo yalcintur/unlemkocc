@@ -20,6 +20,15 @@ class Kosetile extends StatelessWidget {
     ,
     this.index});
   //Kosetile(this.imageasset, this.kosebaslik, this.koseicerik);
+
+  String getAuthor(var a){
+
+    List<String> aList = a.split(" ");
+
+    return aList[aList.length - 2] + " " +aList[aList.length - 1];
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Container(margin: EdgeInsets.only(left: 6.0,bottom: 8.0,right: 6.0),child: new LayoutBuilder(builder: (context, costaints) {
@@ -63,7 +72,7 @@ class Kosetile extends StatelessWidget {
                   ),
                   new Container(
                     child: new Text(
-                      content.author.toString(),
+                      getAuthor(content.icerik),
                       style: Theme.TextStyles.koseyazar,
                       textDirection: TextDirection.ltr,
                     ),
