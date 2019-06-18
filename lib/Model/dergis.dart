@@ -27,6 +27,10 @@ class DergiDao {
     if(dergilist == null){
       var parsedfetch = await fetchPhotos();
       dergilist = parsedfetch;
+      for(int i = 0 ; i < dergilist.length; i++){
+        print(dergilist[0].image);
+
+      }
       return parsedfetch;
 
     }else{

@@ -26,12 +26,14 @@ class WebViewState extends State<WebViewPlugin> {
 
   bool shallwe = false;
   String
-      urll; // = "https://www.brookfield.hants.sch.uk/subpage-content/content-pdfs/exams11/English/Modern%20Text/An%20Inspector%20Calls_text.pdf";
+      urll = "http://africau.edu/images/default/sample.pdf";
   int indexed;
   var dergiimage, baslik;
   WebViewState(this.urll, this.dergiimage, this.baslik, this.indexed);
 
-  String pathPDF = "";
+  String pathPDF = null;
+
+
 
   @override
   void initState() {
@@ -40,6 +42,8 @@ class WebViewState extends State<WebViewPlugin> {
     createFileOfPdfUrl().then((f) {
       setState(() {
         pathPDF = f.path;
+        shallwe = true;
+        print("sss");
         print(pathPDF);
       });
     });
@@ -55,9 +59,7 @@ class WebViewState extends State<WebViewPlugin> {
     String dir = (await getApplicationDocumentsDirectory()).path;
     File file = new File('$dir/$filename');
     await file.writeAsBytes(bytes);
-    setState(() {
-      shallwe = true;
-    });
+
     return file;
   }
 
@@ -72,7 +74,7 @@ class WebViewState extends State<WebViewPlugin> {
   }
   @override
   Widget build(BuildContext context) {
-    return shallwe?  PDFScreen(pathPDF): Container();
+    return pathPDF == null ?  Container(color: Colors.white,child: Center(child: new Image.asset("assets/prgrInd.gif"),),) : PDFScreen(this) ;
   }
 }
 
@@ -112,16 +114,18 @@ Widget CustomAppBar(BuildContext context) {
 }
 
 class PDFScreen extends StatelessWidget {
-  String pathPDF = "";
-  PDFScreen(this.pathPDF);
+  //String pathPDF = "";
+  WebViewState parent;
+  PDFScreen(this.parent);
 
   @override
   Widget build(BuildContext context) {
+
     return PDFViewerScaffold(
         appBar:  new AppBar(
           backgroundColor:  Color.fromRGBO(244, 14, 8, 1),
           title: new Container(margin: EdgeInsets.only(left: MediaQuery.of(context).size.width/2- MediaQuery.of(context).size.width/3.50) ,child: new Image.asset("assets/unlem@3x.png")),
         ),
-        path: pathPDF);
+        path: parent.pathPDF);
   }
 }

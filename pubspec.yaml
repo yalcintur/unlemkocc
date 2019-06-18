@@ -63,21 +63,14 @@ flutter:
     - assets/mikrofon.png
     - assets/koSEyaz@2x.png
     - assets/sayac.png
-    #- assets/auora@2x.png
     - assets/goZ.png
     - assets/like.png
-  #  - assets/tawa@3x.png
-  #  - assets/usain.png
-   # - assets/vincent.png
-  #  - assets/renaisance.png
-  #  - assets/book.png
     - assets/logo@3x.png
     - assets/nlem@3x.png
- #   - assets/ayseAlan.png
     - assets/unlem@3x.png
-   # - assets/ropo.png
     - assets/qmark.jpg
     - assets/noConnection.png
+    - assets/prgrInd.gif
 
     
   

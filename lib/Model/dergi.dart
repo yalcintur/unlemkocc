@@ -22,7 +22,8 @@ class Dergi {
     //print(list.runtimeType); //returns List<dynamic>
     List<Detail> imagesList = list.map((i) => Detail.fromJson(i)).toList();
    // print(imagesList);
-
+    print("asfasfasf");
+    print(json['img'].toString());
     return Dergi(
       id: json['_id'] as String,
       name: json['name'] as String,

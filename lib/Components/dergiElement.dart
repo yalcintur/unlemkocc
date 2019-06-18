@@ -16,15 +16,12 @@ class Dergielemet extends StatelessWidget {
   Future Likeit(var ids)async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
     var iddergi = dergi.id;
-    if(prefs.getBool("$iddergi lk")== null ||prefs.getBool("$iddergi lk")== false ){
-      DergiHttp.PutLike(1,ids);
+    if(prefs.getBool("$iddergi lk")== null ||prefs.getBool("$iddergi lk")== false ){DergiHttp.PutLike(1,ids);
 
     }
-
   }
   Future dLikeit(var ids)async{
     var iddergi = dergi.id;
-
     SharedPreferences prefs = await SharedPreferences.getInstance();
     if(prefs.getBool("$iddergi dlk")== null ||prefs.getBool("$iddergi dlk")== false ){
       DergiHttp.PutDisLike(1,ids);
@@ -97,7 +94,7 @@ class Dergielemet extends StatelessWidget {
 //            children: <Widget>[
             new GestureDetector(
                 onTap: () {
-
+                  print(dergi.image);
                   var ids = dergi.id;
 
                   print("Liked $ids");

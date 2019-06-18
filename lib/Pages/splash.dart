@@ -26,6 +26,7 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> {
   bool loaded = false;
   int readyC= 0;
+  bool debugMode = true;
 
   Future<List<Timerrr>> getTimer() async{
     print("started");
@@ -61,9 +62,15 @@ class _SplashState extends State<Splash> {
         getCaro();
         getVideolist();
       } else {
+        if(debugMode == false){
         Navigator.push(context, MaterialPageRoute(builder: (_) {
           return Login();
         }));
+        }else{
+          Navigator.push(context, MaterialPageRoute(builder: (_) {
+            return Bottomtab();
+          }));
+        }
       }
       print(prefs.getBool("loginStatus"));
     }catch(e){
